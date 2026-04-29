@@ -1,0 +1,197 @@
+{
+  "week_id": "2026-W17",
+  "generated_at": "2026-04-29T21:46:17.146679+00:00",
+  "predictions": {
+    "open": [
+      {
+        "run_ts": "2026-04-28T21:00:00Z",
+        "run_yyyy_ww": "2026-W17",
+        "recommendation_id": "2026-W17-rec-1",
+        "title": "Personalization/CDP compound",
+        "predicted_metric": "email_creates",
+        "predicted_baseline": 1635591,
+        "predicted_delta": "+3% to +5% on email_creates per active C1",
+        "predicted_window_days": 56,
+        "predicted_due_at": "2026-06-23T21:00:00Z",
+        "graded_against": "31-email-creates",
+        "subagent_attribution": "mc-recommendation-ranker",
+        "actual_delta": null,
+        "graded_at": null,
+        "hit": null
+      },
+      {
+        "run_ts": "2026-04-28T21:00:00Z",
+        "run_yyyy_ww": "2026-W17",
+        "recommendation_id": "2026-W17-rec-2",
+        "title": "MM Account/Billing structural",
+        "predicted_metric": "is_high_value bookings (Premium tier proxy)",
+        "predicted_baseline": 59,
+        "predicted_delta": "+20% to +35% on Premium-tier weekly bookings",
+        "predicted_window_days": 365,
+        "predicted_due_at": "2027-04-28T21:00:00Z",
+        "graded_against": "14-bookings-by-tier",
+        "subagent_attribution": "mc-recommendation-ranker",
+        "actual_delta": null,
+        "graded_at": null,
+        "hit": null
+      },
+      {
+        "run_ts": "2026-04-28T21:00:00Z",
+        "run_yyyy_ww": "2026-W17",
+        "recommendation_id": "2026-W17-rec-3",
+        "title": "SMS credit-purchases decline diagnostic",
+        "predicted_metric": "sms_credit_purchases",
+        "predicted_baseline": 645,
+        "predicted_delta": "return to >900/week within 4 weeks of intervention; or flat-to-down if no intervention",
+        "predicted_window_days": 28,
+        "predicted_due_at": "2026-05-26T21:00:00Z",
+        "graded_against": "36-sms-metrics",
+        "subagent_attribution": "mc-recommendation-ranker",
+        "actual_delta": null,
+        "graded_at": null,
+        "hit": null
+      }
+    ],
+    "graded": [],
+    "rolling_hit_rate": null,
+    "n_graded_12w": 0
+  },
+  "findings": [
+    {
+      "ts": "2026-04-28T21:00:00Z",
+      "source": "orchestrator",
+      "claim": "weekly run completed for 2026-W17",
+      "confidence": "high",
+      "citations": [
+        "analyses/2026-W17/"
+      ],
+      "meta": {
+        "subagents_invoked": [
+          "mc-slack-harvester",
+          "mc-bigquery-runner",
+          "mc-doc-parser",
+          "mc-strategy-execution-reconciler",
+          "mc-experiment-synthesizer",
+          "mc-cohort-churn-diagnostician",
+          "mc-gtm-lever-analyst",
+          "mc-competitive-intel-analyst",
+          "mc-growth-tree-50m",
+          "mc-recommendation-ranker",
+          "mc-self-eval-rubric",
+          "mc-adversarial-reviewer",
+          "mc-numeric-round-tripper",
+          "mc-prediction-grader"
+        ],
+        "self_eval_score": "22/25",
+        "predictions_graded": 0,
+        "new_predictions": 3
+      }
+    },
+    {
+      "ts": "2026-04-28T21:00:01Z",
+      "source": "mc-strategy-execution-reconciler",
+      "claim": "FY26 priorities: P&S=4, P&IF=3, PBS=2; biggest gap: MM Account/Billing flex (P1 with zero structural launches in 9 months); strongest cluster: Personalization+Integrations (4 stacked wins)",
+      "confidence": "medium",
+      "citations": [
+        "analyses/2026-W17/01-strategy-reconciliation.md",
+        "canon/fy26-strategy.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:02Z",
+      "source": "mc-experiment-synthesizer",
+      "claim": "Portfolio: ~13 experiments, 80% win rate (selection bias), top-compounding: SMS stack ($1.08M FY26) + Personalization/CDP cluster (4 wins). Critical gaps: 0 experiments on MM account/billing structural, 0 on Community ICP",
+      "confidence": "medium",
+      "citations": [
+        "analyses/2026-W17/02-experiment-synthesis.md",
+        "canon/experiment-canon.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:03Z",
+      "source": "mc-cohort-churn-diagnostician",
+      "claim": "Annualized MRR-at-risk = ~$76.5M (active+passive); concentrated in (a) Standard tier $32M, (b) 24+ tenure $57M (75% of total). Legacy-monthly cohort ($16M annualized at-risk) is invisible in FY26 narrative.",
+      "confidence": "medium",
+      "citations": [
+        "analyses/2026-W17/03-churn-diagnostic.md",
+        "queries/40-cohort-churn-by-package.sql",
+        "queries/41-cohort-churn-by-tenure.sql"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:04Z",
+      "source": "mc-gtm-lever-analyst",
+      "claim": "GTM levers: scaled acquisition (Annual Plans live, target $3.1M, first read 2026-05-21); MM acquisition (target unknown, 0 structural launches in 9mo); SMS expansion plateau ~34K paid plan users; sms_credit_purchases -42.7% over 11 wks",
+      "confidence": "medium",
+      "citations": [
+        "analyses/2026-W17/04-gtm-levers.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:05Z",
+      "source": "mc-competitive-intel-analyst",
+      "claim": "Coverage gap acknowledged. From narrative: HubSpot most acute MM-tier threat; Klaviyo most acute on ecomm CDP. Differentiation white-space: Civic/Social vertical + cross-Intuit QBO data.",
+      "confidence": "low",
+      "citations": [
+        "analyses/2026-W17/05-competitive-context.md",
+        "canon/fy26-strategy.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:06Z",
+      "source": "mc-growth-tree-50m",
+      "claim": "Top 3 levers (P50): 1) Personalization/CDP compound $4.9M, 2) SMS expansion $4.5M, 3) MM Account/Billing structural $4.0M. P50 stack of top 5 = $18.2M. With top-2 candidate new levers = $24.4M. Gap to $50M = ~$25M; suggests 18-24 month horizon not 12.",
+      "confidence": "medium",
+      "citations": [
+        "analyses/2026-W17/06-growth-tree.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:07Z",
+      "source": "mc-recommendation-ranker",
+      "claim": "Top 3 recs (with G14 predictions): 1) Personalization/CDP compound (predicted +3-5% email_creates by 2026-06-23); 2) MM Account/Billing structural (escalation flag - HC/capacity); 3) SMS credit-purchases decline diagnostic (2-wk POL).",
+      "confidence": "medium",
+      "citations": [
+        "analyses/2026-W17/07-recommendations.md",
+        "predictions-ledger.jsonl"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:08Z",
+      "source": "mc-self-eval-rubric",
+      "claim": "Self-eval verdict=approve; score=22/25; all hard gates pass; 1 numeric drift (FT Rolloff $-share 21%->24.6%) noted",
+      "confidence": "high",
+      "citations": [
+        "analyses/2026-W17/08-qc-report.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:09Z",
+      "source": "mc-adversarial-reviewer",
+      "claim": "Headline concern: Personalization compound saturation risk; recommend explicit saturation-test in #1 prediction grading",
+      "confidence": "medium",
+      "citations": [
+        "analyses/2026-W17/08-qc-report.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:10Z",
+      "source": "mc-numeric-round-tripper",
+      "claim": "10 numbers checked, 9 within 2%, 1 warn (FT Rolloff $-share). Publish OK.",
+      "confidence": "high",
+      "citations": [
+        "analyses/2026-W17/08-qc-report.md"
+      ]
+    },
+    {
+      "ts": "2026-04-28T21:00:11Z",
+      "source": "mc-prediction-grader",
+      "claim": "First run - no prior predictions to grade. All subagents at neutral weight initialized.",
+      "confidence": "high",
+      "citations": [
+        "analyses/2026-W17/08-qc-report.md",
+        "predictions-ledger.jsonl"
+      ]
+    }
+  ]
+}
