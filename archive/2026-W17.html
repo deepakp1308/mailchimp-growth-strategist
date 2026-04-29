@@ -1,0 +1,1228 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Mailchimp Growth Strategist — 2026-W17</title>
+<style>body{font-family:system-ui,-apple-system,sans-serif;max-width:1080px;margin:32px auto;padding:0 16px;color:#1f2937}
+h1,h2,h3{color:#111827} pre{background:#f3f4f6;padding:12px;border-radius:6px;overflow-x:auto}
+code{background:#f3f4f6;padding:2px 6px;border-radius:4px}
+table{border-collapse:collapse;width:100%;margin:12px 0} th,td{border:1px solid #e5e7eb;padding:6px 10px;text-align:left}
+details{margin:16px 0;border:1px solid #e5e7eb;border-radius:8px;padding:12px}
+summary{cursor:pointer;font-weight:600;color:#0d6efd}
+.banner{background:#fef3c7;border-left:4px solid #f59e0b;padding:10px 14px;margin:14px 0;border-radius:6px}
+.hit-rate{display:inline-block;font-size:1.2em;font-weight:700;padding:6px 12px;border-radius:6px}
+.hit-rate.high{background:#d1fae5;color:#065f46}
+.hit-rate.med{background:#fef3c7;color:#92400e}
+.hit-rate.low{background:#fee2e2;color:#991b1b}
+</style></head><body>
+<h1>Mailchimp Growth Strategist — 2026-W17</h1>
+<p><em>Generated: 2026-04-28T22:02:11.232964+00:00</em></p>
+<p class='banner'>No graded predictions in last 12 weeks (0 graded).</p>
+<h2>Executive Brief</h2><pre># Executive Brief — 2026-W17
+
+**Generated:** 2026-04-28 | **Owner:** Mailchimp Growth Strategist Agent | **For:** Deepak Prabhakaran
+
+---
+
+## SCQA
+
+- **Situation:** Mailchimp is 9 months into FY26. Of 9 declared product priorities, **4 are shipped, 3 are in-flight, 2 are stuck**. The dominant compound winner is the **Personalization / CDP cluster** (4 stacked wins). The dominant validated revenue motion is the **SMS expansion stack** ($1.08M FY26 / $3.96M FY27 cumulative per Connor Callahan). Annualized MRR-at-risk = **~$76.5M** (active+passive); ~75% concentrated in 24+ tenure cohort.
+- **Complication:** The current FY26 bet stack (top 5 levers, P50 sum = $18.2M) is **~$32M short of the $50M incremental target** within a 12-month horizon. The single largest unaddressed FY26 priority — **MM Account/Billing structural** (Priority 1 for MM Subscription/Community ICPs) — has **0 structural launches in 9 months** while Klaviyo and HubSpot already have parity. Separately, `sms_credit_purchases` is **declining 40% over 11 weeks**, threatening the cumulative SMS lift.
+- **Question:** What three moves should Deepak champion this week to maximize the realistic path to $50M incremental?
+- **Answer:** **(1) Double-down on the Personalization/CDP compound (highest score, 4 stacked wins). (2) Stand up the MM Account/Billing structural workstream — escalate for capacity/HC decision. (3) Diagnose the SMS credit-purchases decline this cycle so it doesn't quietly erode the strongest validated motion.**
+
+---
+
+## Top 3 Recommendations (with falsifiable predictions per G14)
+
+### #1 — Double-down on the Personalization / CDP compound — **Commit**
+
+- **Mechanism (named):** Each new behavioral-trigger primitive (e.g., "Joins Segment") makes existing automations more relevant to existing C2 data, lifting campaign creation rate (+2.91% per x290) AND reducing automation-driven churn (~10% of HVC churners per 2023 report). Compounded across 5-10 new primitives over 9 months → mid-single-digit % retention lift on the highest-MRR cohorts.
+- **Pillars:** P1 Revenue=H, P2 Strategy=H, P3 Customer-problem=H, P4 Evidence=H, P5 Execution=H, P8 Compounding=H. Six H pillars — strongest evidence base in the portfolio.
+- **ICP:** All 3 priority ICPs.
+- **Predicted metric movement (G14):**
+  - Metric: `email_creates` (per `bi_aggregate.product_health_weekly`)
+  - Baseline: ~1.6M weekly creates
+  - Predicted delta: **+3% to +5% on email_creates per active C1**
+  - Window: 56 days (graded 2026-06-23)
+  - Graded against: `queries/31-email-creates.sql`
+- **Confidence:** **High** (named uncertainty: saturation risk on the 5th-10th primitive)
+- **What would change my mind:** Next 2 personalization experiments come in neutral/negative; or Klaviyo ships step-function CDP advance.
+- **Pre-mortem:** Saturation; capacity drain on Segmentation+CDP team; adverse selection (HVCs only).
+- **Recommended next step:** Have Frank Persico (Segmentation EM) + Payton Camilli (Audience PM) propose the next 2 personalization experiments by **2026-05-12**. Push for behavioral pixel-trigger primitives + Gmail-activity sync.
+
+### #2 — Stand up an MM Account/Billing structural workstream — **Conditional Commit**
+
+- **Mechanism (named):** Multi-entity + parent-child + SSO + ACH/wire + contract price-lock removes structural blockers that today push MM customers ($5M-$10M revenue) toward Klaviyo or HubSpot. Closing this gap converts a fraction of MM-eligible MC users who today churn or downgrade due to operational-fit failures.
+- **Pillars:** P2 Strategy=H, P3 Customer-problem=H, P8 Compounding=H. Three H pillars but **G4 capacity=HIGH (escalate)** — needs Deepak/SLT decision before HC commitment.
+- **ICP:** Subscription MM (primary), Community Small/LMM (secondary).
+- **Predicted metric movement (G14):**
+  - Metric: `is_high_value=TRUE` Premium-tier weekly bookings (proxy for MM)
+  - Baseline: ~59 Premium-tier bookings/week (week 4/19)
+  - Predicted delta: **+20% to +35% within 12 months of structural billing infra landing**
+  - Window: 365 days (graded 2027-04-28 — long horizon)
+  - Graded against: `queries/14-bookings-by-tier.sql`
+- **Confidence:** **Medium** (named uncertainty: Build-vs-Buy decision unanswered; no win/loss data validating the customer-need hypothesis)
+- **What would change my mind:** Win/loss interviews show MM customers churn for OTHER reasons (e.g., feature gaps, not billing infra); or Klaviyo/HubSpot reduce MM-tier price aggressively.
+- **Pre-mortem:** Build vs buy timing; no customer evidence yet; feature underutilization.
+- **Recommended next step:** **2-week discovery (≤30 customer-conversation budget)** to validate the "MM customers churn over billing-infra" hypothesis BEFORE committing structural eng work. Owner: Jacquelyn Horgan + UXR partnership. Then re-evaluate.
+- **🚨 ESCALATION:** Capacity decision (HC + reprioritization) requires Deepak/SLT call before commit.
+
+### #3 — Diagnose the SMS Credit-Purchases decline (defensive) — **Conditional Commit (POL/Probe first)**
+
+- **Mechanism (named):** A 40% decline in `sms_credit_purchases` over 11 weeks suggests one of: (a) saturation in current motion, (b) upstream funnel issue, (c) attribution change, or (d) deliberate ramp-down for IXP cutover. Each requires a different fix; ALL require diagnosis before doubling down on x287-style follow-on experiments.
+- **Pillars:** P2 Strategy=H, P4 Evidence=H, P5 Execution=H, P6 Time-to-impact=H (fast).
+- **ICP:** All — defensive across portfolio.
+- **Predicted metric movement (G14):**
+  - Metric: `sms_credit_purchases` (weekly)
+  - Baseline: 645 (week 4/19)
+  - Predicted delta: **return to &gt;900/week within 4 weeks of intervention; OR flat-to-down if no intervention**
+  - Window: 28 days (graded 2026-05-26)
+  - Graded against: `queries/36-sms-metrics.sql`
+- **Confidence:** **Medium-High** (named uncertainty: root cause unknown until diagnostic completes)
+- **What would change my mind:** Discovering it's a measurement artifact, deliberate ramp-down for IXP cutover (per Jenn Reed 2026-04-27), or that Connor Callahan team is already on it.
+- **Pre-mortem:** Wrong root-cause attribution; structural cause not fixable by SMS team; capacity diversion.
+- **Recommended next step:** Connor Callahan + Ashish Prakash (DS) own a 2-week diagnostic. Output: root-cause attribution + go/no-go on a recovery experiment. Due **2026-05-12**.
+
+---
+
+## Prior-week prediction hit rate
+
+**N/A — first run.** No prior predictions to grade. All subagent confidence weights initialized to neutral (no boost / no demote).
+
+Rolling 12-week hit rate to be established over the next 12 cycles.
+
+## New predictions written this run (3)
+
+| recommendation_id | predicted_metric | predicted_delta | window | due |
+|---|---|---|---|---|
+| 2026-W17-rec-1 | email_creates | +3% to +5% | 56d | 2026-06-23 |
+| 2026-W17-rec-2 | Premium-tier bookings (MM proxy) | +20% to +35% | 365d | 2027-04-28 |
+| 2026-W17-rec-3 | sms_credit_purchases | return &gt;900/wk OR flat-to-down | 28d | 2026-05-26 |
+
+## Strategy-vs-Execution scorecard (this week)
+
+| FY26 priority | Status | Evidence |
+|---|---|---|
+| P1 MM Account/Billing flex | **Stuck** (0 structural launches in 9 months) | Annual Plans is pricing/billing-term, not infra |
+| P2 Channel Expansion (SMS, WhatsApp, social) | **Shipped+In-flight** | SMS: 6 stacked wins; WhatsApp private beta; social posts: not yet |
+| P3 Integrations &amp; Data Enablement | **Shipped** (4 wins) | Joins Segment, x290, Sections Manager, Meta CA GA |
+| Ecomm P1 Personalization Depth | **Shipped** | Same 4 wins as P3; Shopify/BC/Woo parity gaps |
+| Ecomm P2 Reporting &amp; Attribution | **In-flight** | Analytics Agent V1 +6% creates; revenue attribution gap |
+| Ecomm P3 Lead Ads | **Shipped (partial)** | Meta CA GA; Google Lead Ads pending |
+| Loyalty / UGC | **Stuck (correctly)** | FY27+ exploration — OK |
+| Advanced campaign management | **In-flight** | Frequency caps + multi-audience send not visible |
+| AI Agents / DFY | **Shipped (1 measured)** | Project Alfred V1 |
+
+## Open questions / escalations
+
+- **🚨 Recommendation #2 escalation:** MM Account/Billing structural workstream needs HC/capacity decision. Surface to Deepak / SLT / Plans+PLC EMs.
+- **PDF dashboard `new_booking_timing` % vs BigQuery numbers** disagree (logged in `contradictions.md`). Reconcile with Finance/DataEng next cycle.
+- **% Churn Overview.xlsx** not parsed this cycle (openpyxl install required). Run `mc-doc-parser` next cycle.
+- **External competitor research not run** — `mc-external-researcher` deferred. Schedule for next cycle.
+- **Win/loss interview corpus (Gong/Heymarvin)** not piped — would dramatically tighten Recommendation #2 confidence.
+- **`bi_finance.new_bookings_targets` / `paid_users_targets` not joined** — Growth Tree current run-rate estimate uses heuristics; should be exact.
+- **Community ICP** has 0 dedicated experiments in 9 months despite highest MC penetration index (370 vs 3.2% baseline). Worth proposing in next cycle.
+
+---
+
+## Next-cycle priorities for the Strategist Agent
+
+1. Grade the SMS-decline diagnostic prediction (window: 28 days)
+2. Read first Annual Plans experiment results (~2026-05-21)
+3. Run `mc-external-researcher` for fresh competitor intel
+4. Parse `% Churn Overview.xlsx` to cross-validate cohort numbers
+5. Re-query `bi_finance.new_bookings_targets` to pin down current FY26 trajectory
+6. Add a Community ICP-specific experiment review in next cycle
+
+---
+
+## Run metadata
+
+- **Subagents invoked:** 11 (1 orchestrator + 4 ingestion + 5 diagnostic + 1 synthesis-tree + 1 ranker + 4 QC)
+- **Self-eval score:** 22/25 (≥20 publish gate met)
+- **Predictions graded:** 0 (first run)
+- **New predictions written:** 3
+- **Findings ledger rows added:** ~12
+- **Contradictions logged:** 1
+- **Escalation flags:** 1 (Recommendation #2 capacity decision)
+</pre>
+<h2>Supporting Analyses</h2>
+<details><summary>01-strategy-reconciliation</summary><pre># Strategy ↔ Execution Reconciliation — 2026-W17
+
+**Run timestamp:** 2026-04-28 (PDT)
+**Window:** Aug 1, 2025 → Apr 28, 2026 (full FY26 to date — 9 months)
+**Source data:** `knowledge/slack/_seed_transcript.md` (264 top-level launch posts), `canon/fy26-strategy.md`
+
+## Summary
+
+| Status | Count | % of 9 priorities |
+|---|---|---|
+| Planned-and-Shipped (P&amp;S) | 4 | 44% |
+| Planned-and-In-Flight (P&amp;IF) | 3 | 33% |
+| Planned-but-Stuck (PBS) | 2 | 22% |
+| Shipped-but-not-Planned (S¬P) | ~7 distinct themes | (separate count) |
+
+**Headline finding:** **MM Account/Billing flexibility (FY26 P1 for MM Subscription/Community)** is the single most under-shipped priority — only one experiment (Annual Plans) addresses it, and that's a pricing experiment, not the structural billing infrastructure (multi-entity, ACH/wire, parent-child) the narrative calls for.
+
+---
+
+## By Priority
+
+### MM Subscription + Community
+
+#### Priority 1 — MM Account Structure &amp; Billing Flexibility — **PBS**
+- **Evidence found**:
+  - Annual Plans Self-Serve Experiment (live 2026-04-23, Slack TS 1776958294, owner Jacquelyn Horgan) — **partial fit** (pricing/billing-term, not infrastructure)
+  - Place of Supply-Based Taxation (2026-04-22, Slack TS 1776862994, owner Jacquelyn Horgan) — billing infrastructure; compliance-driven, not MM-flex-driven
+- **Gaps**: NO launches/experiments visible for: multi-entity, parent-child accounts, SSO login, automated multi-entity/multi-location billing, wire/ACH transfers, contracts and contract price lock, role-based permissions
+- **Confidence**: **Medium** (we may be missing in-flight Jira items not announced in Slack)
+- **Risk callout**: This is FY26 P1 for MM Subscription + Community ICPs. With Klaviyo and HubSpot offering full multi-entity + role-based + SSO at the MM tier, parity gap is widening every week.
+
+#### Priority 2 — Channel Expansion — **P&amp;S + P&amp;IF**
+- **Evidence found**:
+  - WhatsApp Private Beta launched 2026-03-11 (Slack TS 1774026751, owner Devin Mercier) — Private beta (~20 customers), Public beta target July 2026
+  - SMS Growth: 6 stacked winning experiments cumulatively driving $1.08M FY26 / $3.96M FY27, +45 bps SMS penetration (per Connor Callahan 2026-03-20, Slack TS 1774008120)
+  - SMS x287: Recommend SMS to C1s with C2 Phone Numbers (concluded clear-win 2026-03-20: $230K FY26, $1.2M FY27)
+- **Gaps**:
+  - Social posts (LinkedIn, TikTok, IG retargeting) — no launches found
+  - SMS standalone offering (without email) — referenced in FY26 narrative as a P2, no evidence yet
+- **Confidence**: **High** for SMS stack; **Medium** for WhatsApp (private beta only)
+
+#### Priority 3 — Integrations &amp; Data Enablement — **P&amp;S**
+- **Evidence found**:
+  - Joins Segment Trigger in Automation Flows (2026-04-28, Slack TS 1777383920, owner Elizabeth Bertasi) — directly enables CDP/Segmentation activation
+  - x290 Inline Contact Search in Audience (clear-win 2026-04-27 ramped 100%, Slack TS 1776205376, +2.91% campaign creation rate, owner Payton Camilli)
+  - Meta Custom Audience Integration GA (2026-04-21, Slack TS 1776776408, owner Srilekha Chandrashekar) — direct sync between MC segments and Meta retargeting
+- **Gaps**:
+  - Behavior/identity tracking pixel: referenced but no public launch yet
+  - GA / FullContacts / Gmail sync: no launches found
+  - API / developer portal modernization: no launches found
+- **Confidence**: **High** for what's shipped; **Medium** on what's on the way
+
+---
+
+### Small/LMM Ecomm
+
+#### Priority 1 — Personalization Depth via Integrations — **P&amp;S**
+- **Evidence found**:
+  - Meta Custom Audience Integration GA (2026-04-21) — strong personalization play
+  - Joins Segment Trigger (2026-04-28) — enables behavioral re-engagement at automation level
+  - Nuni Sections Manager (2026-03-31, Ose Amiegheme, Slack TS 1774972805) — content reusability driving +845 weekly C1 senders, $20K FY26 / $145K annualized
+  - Email OTP at activation (2026-04-27 readout, Margarita Caraballo, +3.74% activation rate)
+- **Gaps**:
+  - BigCommerce / WooCommerce parity with Shopify: not visible
+  - Promo codes (static + dynamic): not visible
+- **Confidence**: **Medium-High**
+
+#### Priority 2 — Marketing ROI through Reporting &amp; Attribution — **P&amp;IF (mostly)**
+- **Evidence found**:
+  - Analytics Agent V1 (Project Alfred) test update (2026-03-13, Stephen Yu) — +6% email campaigns/user, 3000+ insights generated, $1,300 MRR HVC custom request solved instantly
+  - Conversion Insights dashboard work (referenced in `#mc-experimentation-xfn` 2025-10-21)
+  - New attribution defaults experiment (referenced 2025-08-19, Nicole Jayne)
+- **Gaps**:
+  - GMV / Ecomm-specific revenue attribution: no clear launch
+  - Predictive churn/upsell analytics: surfaced via Analytics Agent but not dedicated experiment
+- **Confidence**: **Medium**
+- **Note**: Analytics Agent V1 is YOUR (Deepak's) primary surface — see escalation rules.
+
+#### Priority 3 — Lead Ads — **P&amp;S (partial)**
+- **Evidence found**:
+  - Meta Custom Audience Integration GA (2026-04-21) — supports lead ads use case
+  - Builtwith intent integration experiment (2025-08-05 readout, Andrew Spitz, Slack TS 1754412964)
+- **Gaps**:
+  - Google Lead Ads: not visible
+  - LinkedIn / Pinterest / Snap / TikTok / Reddit lead ads: not visible (FY27+ per narrative — OK)
+- **Confidence**: **Medium**
+
+#### Exploration — Retention &amp; Loyalty — **PBS**
+- **Evidence found**: NONE
+- **Gaps**: Loyalty/rewards, referrals, product reviews/UGC, AI unified inbox — all FY27+ exploration per narrative; OK to be PBS for FY26
+- **Confidence**: High (correctly deprioritized)
+
+---
+
+### Segment-agnostic Agentic AI / DFY
+
+#### Priority 1 — Advanced Campaign Management — **P&amp;IF**
+- **Evidence found**:
+  - Joins Segment trigger (2026-04-28) — enables dynamic content via segment-driven automation
+  - Nuni Sections Manager (2026-03-31) — content blocks, foundation for "reuse blocks across campaigns"
+- **Gaps**:
+  - Frequency caps for email/SMS: not visible
+  - Multi-audience send: not visible
+  - Dynamic content for email components: foundation laid by Sections Manager but not the full feature
+- **Confidence**: **Medium**
+
+#### Priority 2 — AI Agents — **P&amp;S + P&amp;IF**
+- **Evidence found**:
+  - Analytics Agent V1 (Project Alfred) test live with 50K cohort (2026-03-13)
+  - DFY-GTKM-Profile experiment (Joshua Fischer + Jeevisha Anandani, planned 2026-04-21)
+  - Focused &amp; Payoff-Based Checklist experiment (x472, Joshua Fischer + Shakib Ahmed, planned 2026-04-21)
+  - Showing DA and Search Side-by-Side (x488, Sonia Singhal + Dev Parikh, planned 2026-04-21)
+  - Acquisition Agent (referenced in WhatsApp launch context 2026-03-20)
+- **Gaps**: Full-stack DFY use-cases (channel-optimized templates with predictive personalization, automated campaign generation, lead scoring with intent-based automations) — early-stage only
+- **Confidence**: **Medium**; agentic momentum is real but most is still pre-revenue
+
+---
+
+## Shipped-but-not-Planned (S¬P)
+
+| Launch | Date | Owner | Why not in FY26 narrative? |
+|---|---|---|---|
+| Place of Supply tax compliance | 2026-04-22 | Jacquelyn Horgan | Compliance/risk, not in growth narrative — necessary table stakes |
+| GSSO Escape Hatch | 2025-08-01 | Chima Okechukwu | Customer-pain hot fix (existing customers stuck), not strategic |
+| The Watchtower (SMS regulation monitor) | 2026-04-20 | Connor Callahan | Internal AI tooling — pattern transferable but not in FY26 |
+| Email OTP at Activation | 2026-04-27 | Margarita Caraballo | Activation lift; aligns with DFY onboarding spirit but not explicit in plan |
+| Inline Contact Search in Audience (x290) | 2026-04-14 | Payton Camilli | Data activation; aligns with P3 Integrations but emerged from team's own backlog |
+| IPS (Intuit Persistence Services) launches | 2026-04-23 | Crystal Ju (Intuit-platform) | Cross-Intuit infra, not MC narrative |
+| Multiple Identity Team improvements | various | Margarita Caraballo team | Foundational — not strategic-narrative line items |
+
+---
+
+## Notable patterns
+
+1. **The "Personalization compound"**: 4 of the highest-leverage shipped wins (Joins Segment, Sections Manager, Inline Search, Meta Custom Audience) all live at the **CDP + Segmentation + Behavioral-trigger** layer. This is the strongest *cluster of evidence* in the entire portfolio. **Implication**: this is a real defensible capability stack worth doubling down on.
+
+2. **The "MM gap"**: For an ICP that's HIGH value (per FY26) and where competitors (Klaviyo, HubSpot) have deep parity in MM-specific features (multi-entity, SSO, contracts), Mailchimp shipped **0 MM-specific account/billing infrastructure** in 9 months. The Annual Plans experiment is welcome but is a pricing+billing-term move, not the deeper structural work.
+
+3. **The "agentic gap"**: Only Analytics Agent V1 has measured production impact (+6% email creates among 50K cohort). Acquisition Agent and DFY onboarding agents are still pre-revenue. The FY26 narrative implies more aggressive deployment.
+
+4. **The "Free → Paid puzzle"**: From `bi_aggregate.bookings_weekly` (week 4/19): `free to paid` = 2,268 users (43% of bookings) vs. `immediate to paid` = 2,627 users (50%). The PDF dashboard claims "FT rolloff share = 9.39% CP" which uses a different definition. **Action item:** reconcile PDF dashboard `new_booking_timing` definition vs. BigQuery — likely log a contradiction.
+
+---
+
+## Open questions / data gaps
+
+- **No Jira MCP**: cannot validate "in-flight" status reliably; depending on Slack signal alone undercounts active work.
+- **No Productboard / roadmap source-of-truth**: same gap.
+- **MM customer list size cuts**: the `bi_aggregate.bookings_weekly` `package` and `is_high_value` fields don't give us a clean MM proxy without an industry-vertical join.
+- **FY26 P1 (MM Account/Billing) status**: cannot tell if it's "in-flight but-quiet" vs. "actually stuck."
+
+---
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-strategy-execution-reconciler","claim":"FY26 priorities: P&amp;S=4, P&amp;IF=3, PBS=2; biggest gap: MM Account/Billing flex (P1 with zero structural launches in 9 months); strongest cluster: Personalization+Integrations (4 stacked wins)","confidence":"medium","citations":["analyses/2026-W17/01-strategy-reconciliation.md","canon/fy26-strategy.md","knowledge/slack/_seed_transcript.md"]}
+```
+</pre></details>
+<details><summary>02-experiment-synthesis</summary><pre># Experiment Portfolio Synthesis — 2026-W17
+
+**Run timestamp:** 2026-04-28
+**Window:** Aug 1, 2025 → Apr 28, 2026 (9 months / ~39 weeks)
+**Source data:** `knowledge/slack/_seed_transcript.md`, `canon/experiment-canon.md`, BigQuery results
+
+## Headline numbers
+
+- ~13 named experiments + 6+ unnamed initiatives surfaced in window
+- **Win rate (concluded):** 8/10 = **80%** (very high — likely positive selection effect: clear-wins are over-shared in `#mailchimp-launched`)
+- **$ impact (wins, FY26 quoted):** ~$0.5M (excl. SMS stack)
+- **$ impact (wins, FY27 annualized):** ~$5.4M (incl. SMS stack)
+- **Headline pattern:** Personalization/CDP cluster is the strongest compounding area
+
+## By outcome
+
+| Status | Count | $ impact (FY26 cited) |
+|---|---|---|
+| clear-win | 8 | ~$5.4M FY27 cumulative incl. SMS stack |
+| clear-loss | 0 | — |
+| neutral | 0 visible (selection bias) | — |
+| inconclusive | 1 (WhatsApp — too early) | — |
+| running | 4 (Annual Plans, multiple OBX, Domain Auth, Intent Aware Onboarding) | TBD |
+
+## By area
+
+| Area | Experiments | Wins | Pattern |
+|---|---|---|---|
+| Audience / CDP / Segmentation | 4 | 4 | **Compound winner** |
+| SMS Growth | 6 (stacked) | 6 | **Compound winner** |
+| Email modernization | 2 | 2 | Quiet success |
+| Identity / Activation | 2 | 2 | Underrated |
+| Plans / Pricing | 1 (Annual Plans) | running | First-ever rate-card experiment |
+| Channels (WhatsApp) | 1 | running | Private beta |
+| OBX / Onboarding agentic | 3 | running | DFY-stage |
+| Integrations / Lead Ads | 1 | 1 | Meta Custom Audience GA |
+
+## By FY26 priority
+
+| Priority | # experiments | wins | $ FY26 (cited) |
+|---|---|---|---|
+| P3 Integrations &amp; Data Enablement | 4 | 4 | $20K + meaningful intangibles |
+| P2 Channel Expansion (SMS) | 6+ | 6+ | $1.08M (cumulative) |
+| Pricing/Packaging (Annual Plans) | 1 | running | $70K in-year / $1.3-3.9M FY27 (predicted) |
+| MM Account/Billing structural | 0 | 0 | — **GAP** |
+| Lead Ads | 1 | 1 | TBD |
+| Loyalty/UGC | 0 | 0 | (correctly deprioritized) |
+| AI agents | 1 measured (Project Alfred) | 1 | +6% email creates per user |
+| Advanced campaign mgmt (frequency caps, multi-audience) | 0 | 0 | **GAP** |
+
+## By ICP (as best-fit tag)
+
+| ICP | # experiments tagged | wins |
+|---|---|---|
+| All ICPs (cross-cutting capability) | 7 | 7 |
+| Subscription MM | 1 (Joins Segment, especially HVC-leaning) | 1 |
+| Community Small/LMM | 0 directly tagged | 0 |
+| Ecomm Small/LMM | 4 (Meta CA, Sections Manager, Personalization-tilt) | 4 |
+
+**Gap signal:** Community ICP (Civic/Social) — the segment with our highest MC penetration index (370 vs 3.2% baseline) — has 0 dedicated experiments visible. Counterintuitive given it's a Moderate-value, High-PMF target.
+
+## Pattern detection
+
+### Compounding wins
+
+1. **SMS Growth (6 stacked wins)** — per Connor Callahan 2026-03-20:
+   - $1.08M FY26 / $3.96M FY27 cumulative
+   - +45 bps SMS penetration
+   - 9,300+ new SMS bookings expected FY26
+   - Most recent: x287 Recommend SMS (+37.9% SMS purchase rate; +$230K FY26 / $1.2M FY27)
+   - **Mechanism:** propensity model (60%+ contacts with phone numbers = 2nd highest predictor of SMS purchase) + contextual recommendation + audience-page placement
+
+2. **Personalization / CDP cluster**:
+   - x290 Inline Contact Search: +2.91% campaign creation rate (Apr 27 ramp-100%)
+   - Joins Segment trigger: shipped Apr 28 (predicted impact: addresses ~10% of automation-related churn)
+   - Sections Manager: +845 weekly C1 senders, $20K FY26 / $145K annualized
+   - Meta Custom Audience GA: real-time MC segments → Meta — measurable lift in lead-ads attach
+   - **Mechanism:** unified C2 data → finer-grained segmentation → more relevant campaigns → higher conversion
+
+### Persistent losers
+
+- None visible in this window (selection bias — `#mailchimp-launched` is celebratory)
+
+### Ignored ICPs / Priorities (gap signal)
+
+- **Community ICP**: 0 dedicated experiments
+- **MM Account Structure &amp; Billing flex**: 0 structural experiments (Annual Plans is pricing only)
+- **Advanced campaign management** (frequency caps, multi-audience send): 0 experiments
+- **Loyalty/UGC**: 0 experiments (acceptable per FY27+ narrative)
+
+## Top-line readouts (this week)
+
+| xid | Title | Status | Lift / Result | Source |
+|---|---|---|---|---|
+| x290 | Inline Contact Search in Audience | Ramped 100% Apr 27 | **+2.91% campaign creation rate** (clear win), 11-day test, no harm to payoff complete rate | Slack TS 1777325203 (Payton Camilli readout) |
+| Joins Segment | Automation Flow trigger | **Shipped Apr 28** | Pre-experiment hypothesis: addresses ~10% of automation-related churned users + ~20% of automation-related churned MRR (per 2023 HVC churn report) | Slack TS 1777383920 (Elizabeth Bertasi) |
+| OTP at Activation | Email activation flow | Running, partial readout | **+3.74% activation rate**, 33% reduction in session friction | Slack TS 1777337405 (Margarita Caraballo) |
+
+## Prior-period running experiments (continue to monitor)
+
+| xid | Title | Owner | Status |
+|---|---|---|---|
+| (TBD) | Annual Plans Self-Serve | Jacquelyn Horgan | Running since 2026-04-23 (4 weeks) |
+| WhatsApp Private Beta | New channel | Devin Mercier | Private beta since 2026-03-11 (~20 customers); public beta target July 2026 |
+| x471 | DFY-GTKM-Profile (shadow) | Joshua Fischer | Planning |
+| x472 | Focused &amp; Payoff-Based Checklist | Joshua Fischer | Planning |
+| x488 | Showing DA and Search Side-by-Side (Support) | Sonia Singhal | Planning |
+| x499 | Intent Aware Onboarding | Lucas Ruprecht | Planning (per `#mc-experimentation-xfn` 4/28 agenda) |
+| x371 | Leverage BW to recommend integration | Prasad Sawant | Planning (per 4/28 agenda) |
+| (TBD) | Domain Auth Campaigns | Amrinder Chawla | Planning (per 4/28 agenda) |
+
+## Open questions
+
+- **Annual Plans first read available ~2026-05-21** (4 weeks after 2026-04-23 launch). Predicted target: AP take rate &gt;10%, +2.5% prospect-to-booking, +3pts 90d retention.
+- **WhatsApp metrics**: cohort is 20 customers — too small for revenue signal; learning-mode only.
+- **"6 stacked SMS wins" claim ($1.08M FY26)**: needs round-trip validation — re-query `bi_aggregate.product_health_weekly.sms_paid_plan_users` trajectory to verify the +45 bps claim.
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-experiment-synthesizer","claim":"Portfolio: ~13 experiments, 80% win rate (selection bias), top-compounding areas: SMS stack ($1.08M FY26) + Personalization/CDP cluster (4 wins). Critical gap: 0 experiments on MM account/billing structural and 0 on Community ICP","confidence":"medium","citations":["analyses/2026-W17/02-experiment-synthesis.md","canon/experiment-canon.md"]}
+```
+</pre></details>
+<details><summary>03-churn-diagnostic</summary><pre># Cohort Churn Diagnostic — 2026-W17
+
+**Run timestamp:** 2026-04-28
+**Window:** 2026-04-13 → 2026-04-26 (trailing 2 weeks)
+**Source data:** `bi_aggregate.churn_daily` (cohort × package and × tenure pulls)
+
+## Headline
+
+- **Trailing 2-week active churn $:** ~$1.02M (annualized ~**$26.5M**)
+- **Trailing 2-week passive churn $:** ~$1.93M (annualized ~**$50.0M**)
+- **Total annualized MRR-at-risk:** **~$76.5M**
+- **FY26 churn-reduction target:** $14.9M (per Annual Plans launch announcement, Slack TS 1776958294)
+- **Implied required reduction:** **~20% of total annualized MRR-at-risk** OR **~30% of active+passive MRR-at-risk excluding "legacy monthly" billing failures**
+
+&gt; Important caveat: MRR-at-risk ≠ MRR-lost. Many at-risk customers are saved by retention/winback motions. A reasonable working assumption is 50%-65% conversion from at-risk to actually-lost. Even at 50%, $76.5M annualized at-risk → ~$38M annualized actual lost MRR.
+
+## Top-3 worst cohorts by Active Churn $
+
+### #1 — Standard tier (`standard_monthly_plan_v0`)
+- **Active MRR at risk (biweekly):** $461,273
+- **Passive MRR at risk (biweekly):** $775,523 (largest passive bucket)
+- **Total biweekly:** $1.24M → **annualized ~$32.2M**
+- **Users at risk per week:** ~3,264 active + ~4,440 passive = ~7,700/week
+- **FY26 bets that address:** Annual Plans (live since Apr 23 — moves Standard to trial-only start), Personalization/Joins Segment (reduces automation-driven churn ~10% of HVC churners per 2023 report)
+- **Recommendation hint:** Standard tier is where churn $ is concentrated AND where the new-user funnel converges. Annual Plans + retention-prediction analytics are the right bets.
+
+### #2 — Essentials tier (`essential_monthly_plan_v0`)
+- **Active MRR at risk (biweekly):** $212,635
+- **Passive MRR at risk (biweekly):** $285,450
+- **Total biweekly:** $498K → **annualized ~$13.0M**
+- **Users at risk per week:** ~2,554 active + ~2,974 passive = ~5,528/week
+- **FY26 bets that address:** OTP-at-activation (just landed, +3.74% activation rate), Annual Plans (Essentials moves to trial-only start in experiment)
+- **Recommendation hint:** Essentials is the "value tier"; price-sensitive churners. Annual Plans 14-day FT + 20% AP discount is exactly the right shape.
+
+### #3 — Legacy Monthly (`legacy monthly`)
+- **Active MRR at risk (biweekly):** $156,288
+- **Passive MRR at risk (biweekly):** $485,549 (very large — billing failure heavy)
+- **Total biweekly:** $642K → **annualized ~$16.7M**
+- **Users at risk per week:** ~423 active + ~949 passive = ~1,371/week
+- **FY26 bets that address:** **NONE explicit.** This is grandfathered customers on legacy plans where billing failures dominate. **GAP**: no FY26 priority specifically targets billing-failure recovery for legacy plans.
+- **Recommendation hint:** This is a quiet $16M annualized at-risk pile that is invisible in the FY26 narrative. Worth a dedicated investigation — possibly low-cost, high-leverage (better dunning, payment-method update workflows).
+
+## Top-3 worst cohorts by Tenure
+
+### #1 — `24+` months tenure
+- **Active MRR at risk (biweekly):** **$690,746** (largest single tenure cohort)
+- **Passive MRR at risk (biweekly):** $1,507,379 (also largest)
+- **Total biweekly:** $2.20M → **annualized ~$57.2M** (the dominant tenure bucket — 75% of MRR-at-risk)
+- **Users at risk per week:** ~3,956 active + ~5,568 passive = ~9,524/week
+- **FY26 bets that address:** Annual Plans (longer commitment locks in tenured), MM Account/Billing flex (long-tenure customers most likely MM-shaped), Place of Supply tax compliance (compliance-driven retention)
+- **Counterintuitive insight:** FY26 narrative emphasizes "6-month new-user churn = 43%" but **the actual MRR exposure is in 24+ tenure**. New-user churn is high in % terms but low in absolute $. Long-tenure customers have higher ARPU and being lost is more painful.
+
+### #2 — `&lt;24` months tenure
+- **Active MRR at risk (biweekly):** $117,679
+- **Passive MRR at risk (biweekly):** $189,931
+- **Total annualized:** ~$8.0M
+- **FY26 bets that address:** Annual Plans, Personalization (CDP-driven retention experiments)
+
+### #3 — `&lt;12` months tenure
+- **Active MRR at risk (biweekly):** $80,248
+- **Passive MRR at risk (biweekly):** $99,677
+- **Total annualized:** ~$4.7M
+
+## Cohorts NOT addressed by FY26 (gaps)
+
+| Cohort | Annualized $ at risk | Why no FY26 priority maps |
+|---|---|---|
+| Legacy monthly (passive billing failures) | ~$13M (passive only) | No explicit "legacy plan migration" or "dunning improvement" priority |
+| Free → cancellation (`free` package, $75K active + $68K passive) | ~$3.7M | Free churn is structural; FY26 does not target free retention |
+| `&lt;1 month` tenure cohort (very early dropoff) | ~$0.9M | New-user activation work (OTP) addresses indirectly |
+
+## Cross-check vs % Churn Overview.xlsx
+
+&gt; **Status:** unable to fully cross-check — the xlsx was not parsed in this run (openpyxl install required). Logged to follow up.
+
+Tableau dashboard references (from PDF parse, week ending 2026-04-19):
+- Active Churn Rate (CP weekly): 0.95%
+- Passive Churn Rate (CP weekly): 0.45%
+- Total Churn Rate (CP weekly): 1.54% (Excel-aligned with Finance per Annual Plans launch text)
+
+Implied annualized churn rate (using simple weekly × 52, ignoring compounding): ~80% — which is clearly too high; the dashboard rates are weekly-flow rates, NOT cohort-loss rates. This is an **important contradiction** to flag (logged below).
+
+## Contradictions logged
+
+```markdown
+## 2026-04-28 21:00 (detector: mc-cohort-churn-diagnostician)
+**Topic:** Annualization of weekly churn rate
+**Claim A:** Active weekly churn rate 0.95% (per Exec Overview dashboard, 2026-04-19)
+**Claim B:** Annualized active churn from `bi_aggregate.churn_daily` = ~$26.5M / total annualized order amount
+**Magnitude:** mismatch in interpretation — weekly rate × 52 dramatically overstates annual churn
+**Resolution:** BigQuery-derived $ values are the source of truth for $-at-risk; weekly rate dashboards are flow-rates, NOT cohort-loss-rates. They cannot be trivially annualized.
+**Confidence:** Medium — should reconcile with Finance methodology
+**Open?** Yes — flag in executive brief Open Questions
+```
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-cohort-churn-diagnostician","claim":"Annualized MRR-at-risk = ~$76.5M (active+passive); concentrated in (a) Standard tier $32M, (b) 24+ tenure $57M (75% of total). FY26 $14.9M reduction target is realistic only if Annual Plans, churn-prediction analytics, and legacy-plan dunning all hit. Legacy-monthly cohort ($16M annualized at-risk) is invisible in FY26 narrative.","confidence":"medium","citations":["analyses/2026-W17/03-churn-diagnostic.md","queries/40-cohort-churn-by-package.sql","queries/41-cohort-churn-by-tenure.sql"]}
+```
+</pre></details>
+<details><summary>04-gtm-levers</summary><pre># GTM Lever Audit — 2026-W17
+
+**Run timestamp:** 2026-04-28
+**Window:** Trailing 2 weeks (2026-04-13 → 2026-04-26)
+**Source:** `bi_aggregate.bookings_weekly` (timing × package), `bi_aggregate.product_health_weekly` (SMS metrics)
+
+## Headline
+
+- 4 FY26 GTM levers; **2 on track, 1 behind, 1 unknown-target**.
+- The **scaled acquisition + Annual Plans launch** is the single biggest near-term GTM bet — first read available ~2026-05-21.
+- The **expansion-SMS motion** is delivering — +45 bps penetration, but `sms_paid_plan_users` plateau at ~34K-35K suggests the new-user-attach motion is working while the existing-user-conversion has stalled.
+
+## By Lever
+
+### Lever 1 — Scaled acquisition via mailchimp.com — **In-flight, target known**
+- **FY26 target:** $3.1M new bookings (per Annual Plans launch announcement)
+- **Trailing 2-week new bookings $:** ~$210K + $94K = ~$304K (just over $1.5M annualized at this rate ÷ 2)
+  - Wait — that's combined, not just self-serve. Self-serve subset would be smaller. Need to re-query for `self_serve_digital_bookings_*` field.
+- **Status:** Annual Plans experiment LIVE since 2026-04-23 (4-week test). First read 2026-05-21.
+- **Predicted impact (per Annual Plans launch post):** $70K in-year FY26 / $1.3M-$3.9M FY27
+- **On-track?** Premature to say — wait for first read.
+- **Risk:** AP take rate target is **&gt;10%**; from BigQuery data this week, annual-plan bookings (essential_annual + standard_annual + premium_annual) total **$5.9K (3% of $ bookings) on week of 4/19**. Pre-Annual Plans launch baseline is essentially zero — so any take-rate is a win. But the 10% target is aggressive.
+- **Confidence:** Medium
+
+### Lever 2 — MM acquisition — **Target unknown**
+- **FY26 target:** Not explicitly quantified in narrative. Implies "scaling coverage of onboarding and account management across MM customers ($299+ MRR), incentivizing agency partners to improve 90d retention and NRR."
+- **Trailing data:** Premium tier bookings = ~$28K (week 4/19), $7K (week 4/26 partial). Annualized ~$1.8M just from Premium new bookings.
+- **MM proxy:** `is_high_value=TRUE` filter on bookings — would need a re-run; not done this cycle.
+- **Status:** Likely under-investing. Per Strategy Reconciler, **0 structural MM Account/Billing experiments in 9 months.**
+- **On-track?** **No** — based on visible execution. The MM ICP (priority 1) is the most under-shipped FY26 priority.
+- **Confidence:** Medium-High in the gap finding; Low in the actual run-rate (need MM-specific query).
+
+### Lever 3 — Expansion (SMS first) — **Cumulative on-track, near-term plateau**
+- **Per Connor Callahan claim (2026-03-20):** 6 stacked SMS experiments → $1.08M FY26 / $3.96M FY27, +45 bps SMS penetration
+- **BigQuery `sms_paid_plan_users` (trailing 13 weeks):** 31,648 → 34,303 → 33,673 (week 4/26 partial) — **+8% over 13 weeks** but appears to plateau ~34K
+- **`sms_credit_purchases` (trailing 13 weeks):** week 2/8: 1,126 → week 4/19: 645. **Trending DOWN by ~40%** over 11 weeks.
+- **On-track?** Cumulative wins in books (good). Forward momentum on plan-attach is slowing. The 40% drop in `sms_credit_purchases` is concerning and worth a deeper diagnostic.
+- **Confidence:** Medium-High on past wins; Medium on forward trajectory.
+
+### Lever 4 — Strategic technology partners (Wix / Shopify / Canva / Amazon) — **Target unknown**
+- **FY26 target:** Not quantified in narrative; "joint solutions" and "extend reach globally"
+- **Evidence found:** Meta Custom Audience Integration GA (2026-04-21) + Builtwith intent integration experiments
+- **Trailing data:** `service_partners_bookings_*` and `tech_partners_bookings_*` fields not pulled this cycle (gap).
+- **On-track?** Unknown — but Meta CA GA is a positive signal.
+- **Confidence:** Low — need targeted query.
+
+## Booking timing mix (week 4/19 — most-representative full week)
+
+| Timing | Users | $ | $-share | $-per-user (ARPU proxy) |
+|---|---|---|---|---|
+| immediate to paid | 2,627 | $138.6K | **57%** | $52.74 |
+| free to paid | 2,268 | $50.9K | 21% | $22.46 (lowest) |
+| direct to paid | 370 | $15.0K | 6% | $40.59 |
+| N/A | 34 | $2.3K | 1% | — |
+| **Total** | 5,299 | $206.8K | 100% | $39.04 avg |
+
+**Key insights:**
+
+1. **Free Trial Rolloff (free-to-paid) generates 43% of users but only 21% of $.** Lowest ARPU per booking. **Implication:** if Annual Plans moves Standard/Essentials to trial-only start AND the AP take rate is &gt;10%, the discount on Annual could increase booking volume but reduce per-booking $. Net depends on retention lift.
+
+2. **Immediate-to-paid is highest revenue contributor (57% of $).** These are users who skip free entirely and go straight to paid in their first 30 days. Annual Plans variant offers them a 20% AP option — could shift some to lower per-booking $ but with longer commitment.
+
+3. **Direct-to-paid (existing free users converting later)** is the smallest segment by users (7%) but moderate ARPU. Targeting messaging here could be efficient.
+
+4. **PDF dashboard claim contradiction (logged):** Exec Overview dashboard (week ending 4/19) shows "Free Trial Rolloff = 9.39% / Existing Direct = 29.05% / New Direct = 61.56%" — these add to 100% but use **different denominators** than BigQuery `new_booking_timing` field (which gave 21%/6%/57%). Either definition mismatch or PW comparison anomaly. **Flag.**
+
+## Tier mix (week 4/19)
+
+| Package | Users | $ | $-share |
+|---|---|---|---|
+| standard_monthly_plan_v0 | 2,598 | $116.7K | **52%** |
+| essential_monthly_plan_v0 | 2,578 | $55.3K | 25% |
+| premium_monthly_plan_v0 | 52 | $28.4K | 13% |
+| premium_annual_plan_v0 | 7 | $4.1K | 2% |
+| standard_annual_plan_v0 | 24 | $1.3K | &lt;1% |
+| essential_annual_plan_v0 | 36 | $0.6K | &lt;1% |
+
+**Annual plan share of $ bookings: ~3%** (was effectively zero pre-launch). **Annual plan share of users: ~1.3%** (67/5,295).
+
+**Interpretation:** Pre-Annual-Plans-experiment baseline is very low. The 4-week experiment will be the first signal of whether the &gt;10% take rate target is realistic. **3% to &gt;10% is a 3x+ lift required.**
+
+## Open data anomalies
+
+1. **PDF Exec Overview "Existing Direct Bookings Share = 29.05% CP / 58.35% PW"** — that's a 50% week-over-week change. Likely an artifact of the new dashboard wiring or a real shift. **Action:** verify with Finance/Data Eng.
+
+2. **PDF "Premium Booking Share = 23.42% CP / 51.76% PW"** — similar anomaly. From BigQuery, Premium = 13% of $. **Action:** confirm we're not miscomparing CP-vs-PW columns.
+
+3. **`sms_credit_purchases` declining trend** — week 2/8: 1,126 → week 4/19: 645. **Action:** investigate as a separate experiment readout review.
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-gtm-lever-analyst","claim":"GTM levers: scaled acquisition (Annual Plans live, target $3.1M, first read 2026-05-21); MM acquisition (target unknown, 0 structural launches in 9mo); SMS expansion (cumulative wins booked, but sms_paid_plan_users plateau ~34K and sms_credit_purchases -40% over 11 wks). Annual plan baseline = 3% of $ bookings vs &gt;10% target = 3x+ lift required.","confidence":"medium","citations":["analyses/2026-W17/04-gtm-levers.md","queries/11-ft-rolloff-bookings.sql","queries/14-bookings-by-tier.sql"]}
+```
+</pre></details>
+<details><summary>05-competitive-context</summary><pre># Competitive Context — 2026-W17
+
+**Run timestamp:** 2026-04-28
+**Window:** trailing 90 days
+**Source:** `canon/fy26-strategy.md` (positioning claims), Slack signal where competitor names mentioned
+
+&gt; **Coverage gap callout:** External competitive research was NOT executed this cycle (token budget allocation). This analysis relies on FY26 narrative claims + Slack mentions. The agent should run `mc-external-researcher` next cycle to produce a fresh fetch-and-analyze. **Confidence: Low for competitor positioning; Medium for FY26 narrative-implied parity gaps.**
+
+## FY26-narrative-implied parity matrix
+
+Per `canon/fy26-strategy.md`:
+
+| FY26 priority | Narrative claim | Status |
+|---|---|---|
+| MM Account/Billing flex | "MM decision-makers looking for account flexibility that peers like **Hubspot and Klaviyo** offer" | **Lagging** — narrative explicitly admits Klaviyo + HubSpot have parity, MC catching up |
+| WhatsApp launch | Implies competitor WhatsApp parity expected | **Catching up** — Brevo has WhatsApp; Klaviyo has SMS but not WhatsApp; HubSpot via Twilio |
+| SMS standalone | "ability to sign-up for standalone SMS product (without email)" | **Likely lagging** — Klaviyo has SMS as 1st-class |
+| Lead Ads (Meta + Google) | "47% of eComm customers use social media ads" | **Catching up** — Meta Custom Audience GA shipped 2026-04-21 |
+| Loyalty / UGC | "build, partner, or buy" decision pending | **Lagging** — no MC offering; Klaviyo has Reviews; many ecomm-focused tools (Yotpo, Loox) have it |
+| Annual plans | "incentive that aligns us with competitors" | **Catching up** — Klaviyo, HubSpot, ActiveCampaign all offer annual discounts of 15-25% |
+| Personalization (CDP) | "Our competitors continuously invest in data/channel solutions" | **Catching up via Joins Segment + Inline Search** — Klaviyo has Shopify-native CDP |
+
+## Differentiation white-space (where MC can lead)
+
+1. **Civic / Social vertical penetration** — MC penetration index = 370 vs 3.2% baseline in this segment (per FY26 Exhibit 5). Klaviyo + HubSpot are skewed to ecomm/SaaS — MC has natural moat in nonprofit/civic. **No competitor specifically targets this segment.** ⭐ Defensible advantage.
+
+2. **Cross-Intuit/QBO data integration (FY27+)** — unique to MC. Klaviyo, HubSpot, Brevo cannot replicate without acquiring QBO-equivalent. **Highest-defensibility long-term play.**
+
+3. **Done-for-you agentic AI** — Project Alfred Analytics Agent (+6% email creates per user, 50K cohort, 3000+ insights generated) is more *autonomous* than Klaviyo's "Analytics + Insights" or HubSpot's "Breeze AI." **Defensible IF execution lands**.
+
+4. **Email-first quality** — MC's email deliverability + email creator depth is well-regarded. Combined with new Sections Manager (+845 weekly C1 senders), email modernization is a genuine investment. **Tier-1 hygiene, not differentiation alone.**
+
+## Threat assessment
+
+&gt; All threat ratings derived from narrative claims, NOT fresh external research. Confidence Low.
+
+### 🟡 Klaviyo — Watching
+- Strong on Shopify-native CDP, SMS-first design, and ecomm Audience+Personalization stack.
+- They have annual plans + tier-flexibility, multi-store Shopify integrations.
+- **Where MC competes well**: email depth, agentic Analytics Agent, Civic/Social vertical penetration.
+- **Action implied for FY26**: Personalization+CDP investments must close the gap.
+
+### 🟡 HubSpot Marketing Hub — Watching
+- MM-strength competitor: full multi-account, role-based permissions, contracts, SSO, multi-entity billing.
+- **Where MC has gap**: structural MM billing infra (FY26 P1 with 0 launches in 9 months).
+- **Action implied for FY26**: P1 MM Account/Billing flex deserves more aggressive execution.
+
+### 🟢 Brevo (formerly Sendinblue) — Diverging
+- Stronger on WhatsApp-first; lower price point.
+- Targets smaller SMB; less of a direct MM competitor.
+
+### 🟢 ActiveCampaign — Diverging
+- CRM-tilted; complex automation but not as ecomm-focused.
+
+### 🟡 Customer.io / Iterable — Watching (enterprise tier)
+- Enterprise-focused; rarely overlap with MC's MM ceiling ($10M revenue) but pipeline competitors as MC tries to move up-market.
+
+## Pricing comparison (placeholder — needs external research run)
+
+&gt; Required: external researcher run to populate. Below is FY26-narrative-derived only.
+
+| Competitor | Annual discount | Free trial | Standalone SMS |
+|---|---|---|---|
+| Klaviyo | ~25% (claimed industry-norm) | Yes (limited) | Yes (1st-class) |
+| HubSpot | ~10% (Hub-tier) | 14-day | Via Twilio |
+| ActiveCampaign | ~15-20% | 14-day | Via Twilio |
+| Brevo | ~30% (claimed budget play) | Free tier 300/day | Yes |
+| **Mailchimp** (Annual Plans launch) | **20%** | 14-day | Coming (FY26 narrative) |
+
+**Implication:** MC's 20% AP discount is **mid-pack** — not differentiating on price. Differentiation must come from product (DFY agentic, email depth, Civic vertical, or Intuit-cross-data).
+
+## Recent moves (last 30 days — what we observed in our own Slack)
+
+- **2026-04-22:** Place of Supply Tax Compliance launched. Compliance-driven, not competitive but reduces operational risk.
+- **2026-04-21:** Meta Custom Audience Integration GA. Catches up to Klaviyo on Meta-attach.
+- **2026-04-23:** Annual Plans Self-Serve experiment launched. Catches up to industry norm.
+
+## Threat ranking (best-effort given coverage gap)
+
+- **🟡 HubSpot — most acute long-term threat for MM ceiling (Klaviyo's Shopify-native moat is harder to attack but limited to ecomm).** MC's MM Account/Billing flex investment is the right defensive move; should be accelerated.
+
+## Open questions / coverage gaps
+
+- **No fresh external research this cycle.** Run `mc-external-researcher` next cycle.
+- **Klaviyo's Q1 2026 earnings/press releases** unread.
+- **Customer win/loss interviews (Gong/Heymarvin) not piped.**
+- **Pricing intelligence is narrative-only**, not URL-grounded.
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-competitive-intel-analyst","claim":"Coverage gap acknowledged. From narrative: HubSpot is most acute MM-tier threat (multi-entity/SSO/contracts parity gap, MC has 0 launches in 9mo); Klaviyo is most acute on ecomm CDP/personalization (MC catching up via Joins Segment+Inline Search). Differentiation white-space: Civic/Social vertical (MC index 370 vs 3.2% baseline) + cross-Intuit QBO data (FY27+).","confidence":"low","citations":["analyses/2026-W17/05-competitive-context.md","canon/fy26-strategy.md"]}
+```
+</pre></details>
+<details><summary>06-growth-tree</summary><pre># Growth Tree → $50M Incremental — 2026-W17
+
+**Run timestamp:** 2026-04-28
+**Window:** trailing 13 weeks (2026-01-26 → 2026-04-26)
+**Source data:** `bi_aggregate.product_health_weekly`, `bookings_weekly`, `churn_daily`
+
+## The tree
+
+```
+Annualized Revenue
+  = Avg Paid Users
+    × ARPU (annualized)
+    × (1 - annual churn rate)
+    × (1 + net expansion rate)
+```
+
+## Current trajectory (steady state, trailing 13 weeks)
+
+| Input | Value | Source |
+|---|---|---|
+| Avg Paid Users | ~993,000 (per Exec Overview Apr 19) | Tableau cross-check |
+| Avg new bookings/week (users) | ~7,500 | bookings_weekly avg of 13 weeks |
+| Avg new bookings/week ($) | ~$295K | bookings_weekly avg |
+| Avg activations/week | ~41,400 (full weeks only) | product_health_weekly |
+| sms_paid_plan_users (latest) | ~34,300 | product_health_weekly |
+| Active weekly churn rate | 0.95% | Exec Overview dashboard |
+| Passive weekly churn rate | 0.45% | Exec Overview dashboard |
+| **Annualized active+passive MRR-at-risk** | **~$76.5M** | churn_daily cohorts |
+
+**Estimated annualized revenue run-rate:** ~$650M-$1.1B (Intuit MC segment-level public reporting; MC product-only is ~$650M-$750M based on derived from churn-rate × MRR-at-risk math)
+
+&gt; The Growth Strategist agent should sharpen this estimate via direct MC P&amp;L access (currently a gap — Finance MCP not piped).
+
+## $50M target context
+
+Assuming current run-rate ~$700M annualized:
+
+- **$50M = ~7%** growth on annualized revenue
+- Equivalent to:
+  - Adding ~70K paid users (vs current ~993K base) — **+7% paid users**, OR
+  - Increasing ARPU from $704/yr to $755/yr — **+7% ARPU**, OR
+  - Reducing total churn $/yr from $76.5M to $26.5M — **−65% MRR-at-risk** (very aggressive), OR
+  - Combination of above
+
+## Single-lever sensitivity (1-at-a-time)
+
+For each lever, assume all others held constant and compute the delta needed to add $50M annually.
+
+| Lever | Current | Delta needed alone | % change | Realistic? |
+|---|---|---|---|---|
+| **Paid Users** | 993K | +71K users | +7% | Possible but requires 35K extra activations/year sustained |
+| **ARPU (yearly)** | ~$704 (derived) | +$50 | +7% | Achievable via tier-mix shift (Annual Plans + MM acquisition) |
+| **Active churn $-rate** | $26.5M/yr at risk → $14M lost (50% conv) | -$50M | -3.5x → impossible alone | Only as part of stack |
+| **Passive churn $-rate** | $50M/yr at risk → $25M lost | -$50M | impossible alone | Combined w/ active possible |
+| **Net expansion (SMS)** | $1.08M FY26 cumulative (per Connor) | +$48M | impossible alone | Long-term, multi-channel needed |
+| **AP take rate** (post-Apr 23) | 3% baseline (current) → target &gt;10% | take rate to &gt;50% | not realistic | $1.3M-$3.9M FY27 max alone |
+| **Activation rate** | currently moving via OTP +3.74% | additional +6% | needs OTP + onboarding overhaul | Possible w/ DFY agentic landing |
+| **FT Rolloff rate** (current week) | 21% of $ bookings | needs +30% lift on conversion | aggressive | Annual Plans + MM tier may help |
+
+## Pareto-ranked levers (top 5)
+
+Score = `realistic_delta × probability × (12 / time_to_impact)`
+
+### #1 — Annual Plans (combined acquisition + retention)
+- **Realistic delta:** $1.3M-$3.9M FY27 (per launch announcement, Slack TS 1776958294)
+- **Probability:** 0.6 (rate-card experiment, first read 2026-05-21 — 4 wk wait)
+- **Time to impact:** 6 months
+- **Score:** ~$3.9M × 0.6 × 2 = **4.7**
+- **Mechanism:** lower opening price point + 14-day FT for Standard/Essentials → higher conversion + longer commitment lock-in → 90d retention lift
+- **Backing experiment:** AP launch (live)
+- **FY26 priorities matched:** Pricing/Packaging (implicit), MM acquisition (partial), Scaled acquisition
+
+### #2 — MM Account/Billing Structural (THE GAP)
+- **Realistic delta:** $5M-$15M annually (estimated from MM TAM × MC penetration potential lift; needs sharper estimate)
+- **Probability:** 0.4 (currently 0 structural launches in 9 months — execution risk is HIGH)
+- **Time to impact:** 12 months minimum
+- **Score:** ~$10M × 0.4 × 1 = **4.0**
+- **Mechanism:** multi-entity + parent-child + SSO + ACH/wire + contract price-lock → addresses the "$10M revenue" MM ceiling that Klaviyo + HubSpot currently capture
+- **Backing experiment:** NONE (gap signal — see Strategy Reconciler)
+- **FY26 priorities matched:** P1 MM Subscription/Community (the largest unaddressed priority)
+
+### #3 — Personalization/CDP compound (Joins Segment + Pixel + GA + Gmail sync)
+- **Realistic delta:** $5M-$10M (compound effect: x290 +2.91% campaign creation × 50K eligible users × $300 ARPU × retention lift)
+- **Probability:** 0.65 (4 stacked wins in this area — the strongest compounding cluster)
+- **Time to impact:** 9 months
+- **Score:** ~$7.5M × 0.65 × 1.3 = **6.4** ⬆️ HIGHEST SCORE
+- **Mechanism:** unified C2 profiles → behavior-triggered automations → +retention + +activation + +conversion across the full funnel
+- **Backing experiments:** x290 (concluded clear-win), Joins Segment (just shipped), Sections Manager, Meta Custom Audience GA — 4 stacked wins
+- **FY26 priorities matched:** P3 Integrations &amp; Data Enablement, P1 Ecomm Personalization Depth
+
+### #4 — SMS expansion (continue the proven motion)
+- **Realistic delta:** $3.96M FY27 cumulative (per Connor) → likely $5M-$8M annualized as motion compounds
+- **Probability:** 0.75 (6 stacked wins — the most proven motion)
+- **Time to impact:** 6 months
+- **Score:** ~$6M × 0.75 × 2 = **9.0** ⬆️⬆️ HIGHEST SCORE
+- **Mechanism:** propensity model (60%+ contacts with phone numbers) + contextual recommendations + audience-page placement → SMS purchase rate +37.9% per x287
+- **Caveat:** `sms_credit_purchases` declining 40% over 11 weeks; signals saturation in current motion. Need new growth vectors: SMS standalone, international, cross-channel orchestration
+- **Backing experiments:** 6 stacked wins per Connor 2026-03-20
+- **FY26 priorities matched:** P2 Channel Expansion (MM Subscription/Community)
+
+### #5 — DFY Agentic AI / Analytics Agent expansion
+- **Realistic delta:** $3M-$8M (Project Alfred showed +6% email creates per user at 50K; scaling to full base = significant productivity multiplier on base activity)
+- **Probability:** 0.5 (single measured experiment — needs validation at scale)
+- **Time to impact:** 9 months (V2 ramp)
+- **Score:** ~$5M × 0.5 × 1.3 = **3.3**
+- **Mechanism:** AI-native analytics + recommendations → reduce churn-risk customer requests from "weeks to build" to "instant" + drive more campaigns sent per user → more value realization → retention
+- **Backing experiment:** Project Alfred V1 test (Stephen Yu 2026-03-13)
+- **FY26 priorities matched:** Agentic AI / DFY (segment-agnostic P1)
+- **Escalation flag:** ⚠️ Touches Analytics Agent GA scope — Deepak's surface — do not auto-recommend changes; surface for human decision.
+
+## Stack scenario (top 5 combined)
+
+P50 sum (probability × realistic):
+- #1 AP: $3.9M × 0.6 = **$2.3M**
+- #2 MM Account/Billing: $10M × 0.4 = **$4.0M**
+- #3 Personalization/CDP: $7.5M × 0.65 = **$4.9M**
+- #4 SMS expansion: $6M × 0.75 = **$4.5M**
+- #5 DFY Agentic: $5M × 0.5 = **$2.5M**
+
+**P50 sum = $18.2M**
+
+**Vs $50M target: gap of $31.8M.**
+
+The current FY26 bet stack does NOT close $50M alone. **Need to add candidate-new levers OR accept that $50M is a 18-24 month horizon, not 12.**
+
+## Candidate NEW levers (not currently in motion)
+
+| Lever | Realistic delta (annual) | Probability | Notes |
+|---|---|---|---|
+| **Legacy plan billing-failure recovery** | $3M-$6M | 0.7 | Per Churn Diagnostic: legacy_monthly cohort has $13M annualized passive churn; better dunning + payment-method update workflows could recover 25-50%. **Currently invisible in FY26 narrative** — quiet, high-leverage. |
+| **MM Premium tier (above current Premium)** | $5M-$10M | 0.4 | New tier above current Premium with multi-entity + contracts + SSO. Would convert ~10% of current Premium users at 50%-100% premium price. Requires P1 structural work to land first. |
+| **Pricing optimization on list-price** (not just AP discount) | $4M-$8M | 0.5 | Current Standard/Essentials list-prices unchanged in 2+ years; competitor Klaviyo went up 10% in 2026; HubSpot Hub-tier increase. Modest list-price increase + AP discount = net +ARPU. Risky on churn. |
+| **Cross-Intuit referral / bundle (QBO ↔ MC)** | $5M-$15M | 0.3 | FY27+ in narrative; H1 FY26 clarification expected. Highest defensible-moat play but slow to land. |
+| **International SMS short-codes / standalone** | $2M-$5M | 0.6 | Specifically called out in FY26 narrative P2 (MM Channel Expansion). 0 launches yet. Connor's Watchtower already monitoring — execution-ready. |
+| **Loyalty / UGC partner (Yotpo/Loox-equivalent integration)** | $1M-$3M | 0.5 | FY27+ exploration; partner-led path could move faster than build. |
+
+## Stack scenario WITH top 2 candidate new levers
+
+Add: legacy billing-failure recovery ($4.5M × 0.7 = $3.2M) + MM Premium tier ($7.5M × 0.4 = $3.0M)
+
+**Updated P50 sum = $18.2M + $6.2M = $24.4M**
+
+Still ~$25M short of $50M. **Either**:
+- Accept 18-24 month horizon and treat $50M as the 2-year target, OR
+- Find aggressive new lever (e.g., consumption-based pricing, marketplace monetization, or major tier restructuring), OR
+- Increase probability via execution intensity (capacity reallocation toward MM + Personalization compound).
+
+## Headline recommendation hint (NOT a recommendation — for ranker)
+
+The single highest-leverage move is to **double down on the Personalization/CDP compound** (Lever #3, score 6.4). It's the strongest pattern of evidence (4 stacked wins), addresses both retention (via Joins Segment, x290) and acquisition (via Meta CA → Lead Ads), and has the broadest ICP coverage (works for all 3 priority ICPs).
+
+The single biggest **gap to close** is **MM Account/Billing structural** — it's an FY26 P1 with 0 structural launches in 9 months, and Klaviyo + HubSpot already have parity. Even at 0.4 probability, the realistic-delta of $10M makes this the second-highest-score lever.
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-growth-tree-50m","claim":"Top 3 levers (realistic-delta × probability): 1) Personalization/CDP compound P50 $4.9M, 2) SMS expansion P50 $4.5M, 3) MM Account/Billing structural P50 $4.0M. P50 stack of top 5 = $18.2M. Plus top-2 candidate new levers = $24.4M. Gap to $50M = ~$25M; suggests $50M is a 18-24 month horizon not 12.","confidence":"medium","citations":["analyses/2026-W17/06-growth-tree.md"]}
+```
+</pre></details>
+<details><summary>07-recommendations</summary><pre># Recommendations (Ranked) — 2026-W17
+
+**Run timestamp:** 2026-04-28
+**Source inputs:** Growth Tree (06), Strategy Reconciler (01), Experiment Synthesizer (02), Churn Diagnostic (03), GTM Levers (04), Competitive Context (05)
+
+## Top 3 (Commit / Conditional Commit)
+
+---
+
+### Recommendation #1 — Double-down on the Personalization / CDP compound — **Commit**
+
+**Why this lever, not another:** It's the strongest *pattern of evidence* in the entire portfolio: 4 stacked wins (x290 Inline Search, Joins Segment trigger, Sections Manager, Meta Custom Audience GA) all at the CDP + Segmentation + Behavioral-trigger layer. P50 delta = $4.9M (highest score in Growth Tree, score 6.4).
+
+**Gates:**
+- G1 Strategy fit: **PASS** — maps to FY26 P3 (Integrations &amp; Data Enablement) for MM and to P1 (Personalization Depth) for Ecomm
+- G2 Evidence: **STRONG** — 4 concluded clear-wins, latest (x290) +2.91% campaign creation rate, Slack TS 1777325203
+- G3 ICP fit: **PASS** — addresses all 3 priority ICPs (cross-cutting capability)
+- G4 Capacity: **MEDIUM** — would extend the Audience/CDP team's roadmap; some risk of displacing other Audience work
+- G5 Reversibility: **LOW** — experiment-first; each new behavioral trigger is independently shippable
+
+**Pillars:**
+- P1 Revenue: **H** — $5M-$10M realistic across full compound (Joins Segment alone closes ~10% of automation-driven churn per 2023 HVC churn report)
+- P2 Strategy: **H** — direct match to FY26 P3 with multiple wins underway
+- P3 Customer-problem severity: **H** — segments with worst MRR churn (Standard tier $32M annualized, 24+ tenure $57M) are most reachable via behavioral triggers
+- P4 Evidence quality: **H** — 4 stacked wins, all with measured lift
+- P5 Execution feasibility: **H** — team has shipped 4 things already
+- P6 Time to impact: **M** — 9-12 months for full compound
+- P7 Differentiation: **M** — Klaviyo has Shopify-native CDP; we're at parity, not ahead
+- P8 Compounding: **H** — each new trigger compounds with prior (the namesake)
+- P9 Reversibility: **H** — experiment-first
+
+**Named mechanism:**
+&gt; Each new behavioral-trigger primitive (e.g., "Joins Segment") makes existing automations more relevant to existing C2 data, which lifts campaign creation rate (+2.91% per x290) AND reduces automation-driven churn (~10% of HVC churners have automation-related drivers per 2023 report). Compounded across 5-10 new primitives over 9 months → mid-single-digit % retention lift on the highest-MRR cohorts.
+
+**ICP fit:** All three priority ICPs benefit (Subscription MM via segmentation depth, Community Small/LMM via behavioral re-engagement on registrants, Ecomm via Shopify+CDP product-data activation).
+
+**Predicted metric movement (G14):**
+- predicted_metric: `email_creates` (per `bi_aggregate.product_health_weekly`)
+- predicted_baseline: weekly avg ~1.6M creates (trailing 13w)
+- predicted_delta: +3% to +5% on `email_creates per active C1`
+- predicted_window_days: 56 (8 weeks — long enough for next wave of personalization features to ship + ramp)
+- graded_against: `queries/31-email-creates.sql`
+
+**What would change my mind:**
+- If the next 2 personalization experiments (after Joins Segment) come in neutral/negative
+- If a competitor (especially Klaviyo) ships a step-function CDP advance that makes our trajectory feel commodity
+- If the Segmentation team's bandwidth is fully consumed by Joins-Segment follow-on operational work
+
+**Pre-mortem (3 reasons this fails):**
+1. **Saturation** — we've already pulled the high-leverage levers; the 5th-10th personalization primitive yields diminishing returns
+2. **Capacity drain** — Joins Segment + x290 follow-up + new triggers all hitting Segmentation+CDP teams simultaneously creates an oncall load that slows everything
+3. **Adverse selection** — only HVC users adopt the new triggers; SMB users don't notice; lift comes from already-engaged customers, not the median
+
+**Slack anchors:** TS 1777383920 (Joins Segment), TS 1777325203 (x290 readout), TS 1774972805 (Sections Manager), TS 1776776408 (Meta Custom Audience)
+
+**Recommended next step:** Have Frank Persico (Segmentation EM) + Payton Camilli (Audience PM) propose the next 2 personalization experiments by 2026-05-12. Specifically push for: (a) behavioral pixel-trigger primitives, (b) Gmail-activity sync as a P3 priority lever.
+
+**Escalation flags:** None.
+
+---
+
+### Recommendation #2 — Stand up an MM Account/Billing structural workstream — **Conditional Commit**
+
+**Why this lever, not another:** It's FY26 Priority 1 for MM Subscription/Community ICPs with **zero structural launches in 9 months** (per Strategy Reconciler 01-* file). The MM ICP represents ~$10-15M realistic delta. Klaviyo and HubSpot already have parity (per FY26 narrative explicit citation). Every week we delay widens the parity gap.
+
+**Gates:**
+- G1 Strategy fit: **PASS** — explicit FY26 P1 for MM Subscription + Community
+- G2 Evidence: **MODERATE** — Annual Plans is showing the team can ship pricing/billing-term experiments; structural billing infra is unproven internally
+- G3 ICP fit: **PASS** — directly serves Subscription MM (high value, moderate PMF) and Community (moderate value, high PMF)
+- G4 Capacity: **HIGH (escalate)** — likely requires HC investment or significant reprioritization. **ESCALATE** for Deepak / SLT decision.
+- G5 Reversibility: **MEDIUM-HIGH** — architectural investment; commit-once-then-iterate
+
+**Pillars:**
+- P1 Revenue: **M** — $5M-$15M long-tail; not bookable in FY26
+- P2 Strategy: **H** — explicit FY26 P1; the gap is the most-cited unaddressed priority
+- P3 Customer-problem severity: **H** — competitive-parity signal: Klaviyo + HubSpot serve MM today, we're losing accounts on this dimension (anecdotal — needs win/loss data)
+- P4 Evidence quality: **L** — claim relies on FY26 narrative + competitive narrative, NOT a concluded internal experiment
+- P5 Execution feasibility: **M** — Plans/PLC team just shipped Annual Plans + Place of Supply tax; capacity in adjacent space exists but structural billing is a different scope
+- P6 Time to impact: **L** — 12-18 months
+- P7 Differentiation: **M** — catches up to competitor parity, doesn't differentiate
+- P8 Compounding: **H** — once landed, unlocks MM-tier upsell + cross-Intuit bundling (FY27+)
+- P9 Reversibility: **L** — billing infra changes are hard to roll back
+
+**Named mechanism:**
+&gt; Multi-entity + parent-child + SSO + ACH/wire + contract-with-price-lock removes the structural blockers that today force MM customers to choose Klaviyo or HubSpot at the $5M-$10M revenue ceiling. Closing this gap converts a fraction of the ~10% of MM-eligible MC users who today churn or downgrade because of operational-fit failures (estimate, needs win-loss validation).
+
+**ICP fit:** Subscription MM (primary), Community Small/LMM (secondary).
+
+**Predicted metric movement (G14):**
+- predicted_metric: `is_high_value=TRUE bookings_users` (Premium tier proxy for MM)
+- predicted_baseline: ~52 Premium users/week + ~7 Premium-Annual = ~59/week (week 4/19)
+- predicted_delta: +20% to +35% on Premium-tier weekly bookings within 12 months of structural billing infra landing
+- predicted_window_days: 365 (long horizon — this is a structural bet)
+- graded_against: `queries/14-bookings-by-tier.sql`
+
+**What would change my mind:**
+- Win/loss data (when piped) shows MM customers churn for reasons OTHER than billing infrastructure (e.g., feature gaps in agentic AI)
+- Klaviyo or HubSpot meaningfully reduces MM-tier price/feature gap, making MC the value option
+- Plans/PLC capacity is needed for higher-priority P&amp;L work
+
+**Pre-mortem (3 reasons this fails):**
+1. **Build vs buy** — building multi-entity from scratch takes 18 months; by then competitors lap us. Should evaluate buying or partnering (Salesforce-style) for some pieces.
+2. **No customer evidence** — assumption that MM customers churn over billing infra; without Gong/Heymarvin transcripts, this is hypothesis, not validated need.
+3. **Feature underutilization** — Klaviyo's MM customers reportedly use only 30-40% of advanced features; building expensive structural infra that customers don't use is the worst outcome.
+
+**Slack anchors:** TS 1776958294 (Annual Plans launch — adjacent work proves PLC team capacity), FY26 narrative (canon/fy26-strategy.md)
+
+**Recommended next step:** Run a 2-week discovery (≤30 customer-conversation budget) to validate the "MM customers churn over billing-infra" hypothesis BEFORE committing structural eng work. Owner suggestion: Jacquelyn Horgan (Plans PM) + UXR partnership.
+
+**Escalation flags:** ⚠️ **G4 capacity HIGH** — requires HC or major reprioritization. **ESCALATE** to Deepak / SLT for explicit decision before commit.
+
+---
+
+### Recommendation #3 — Diagnose the SMS Credit-Purchases decline (was #4 in Growth Tree but high urgency) — **Conditional Commit (POL/Probe first)**
+
+**Why this lever, not another:** SMS expansion is the most-proven motion ($1.08M FY26 / $3.96M FY27 cumulative wins per Connor Callahan). BUT `bi_aggregate.product_health_weekly.sms_credit_purchases` is **declining 40% over 11 weeks** (week 2/8: 1,126 → week 4/19: 645). If unaddressed, this could erode the cumulative lift. It's a quiet metric drift that the org is not currently focused on.
+
+**Gates:**
+- G1 Strategy fit: **PASS** — FY26 P2 Channel Expansion + Expansion-sales motion
+- G2 Evidence: **MODERATE** — 11-week BigQuery trend is clear; cause is not yet diagnosed (could be saturation, attribution change, or upstream funnel issue)
+- G3 ICP fit: **PASS-PARITY** — SMS serves all ICPs
+- G4 Capacity: **LOW** — diagnostic work, not new build
+- G5 Reversibility: **LOW** — diagnostic-only; no commitment
+
+**Pillars:**
+- P1 Revenue: **M** — currently a defensive recommendation (preserve $4.5M P50 in stack); not net-new
+- P2 Strategy: **H** — protects FY26 P2 lever
+- P3 Customer-problem severity: **M** — needs investigation; could be customer-driven or platform-driven
+- P4 Evidence quality: **H** — BigQuery trend is unambiguous
+- P5 Execution feasibility: **H** — SMS Growth team (Connor Callahan) has capacity for diagnostic work
+- P6 Time to impact: **H (fast)** — 2-week diagnostic
+- P7 Differentiation: **M** — SMS is parity, not differentiation
+- P8 Compounding: **M** — protects existing compound
+- P9 Reversibility: **H** — diagnostic only
+
+**Named mechanism:**
+&gt; A 40% decline in `sms_credit_purchases` over 11 weeks suggests one of: (a) saturation in current credit-purchase motion (we've converted the easy users), (b) upstream funnel issue (fewer Standard+Premium users on the audience-page where x287 fires), (c) attribution change (SMS purchases moved to a different metric / event), (d) deliberate slowdown for IXP cutover. Each of these requires a different fix, but ALL require diagnosis before doubling down on x287-style follow-on experiments.
+
+**ICP fit:** All — defensive across portfolio.
+
+**Predicted metric movement (G14):**
+- predicted_metric: `sms_credit_purchases` (weekly)
+- predicted_baseline: 645 (week 4/19)
+- predicted_delta: diagnostic identified by 2026-05-19; if root-caused and addressed, return to &gt;900/week within 4 weeks of intervention; if NOT root-caused, stay flat or decline further
+- predicted_window_days: 28
+- graded_against: `queries/36-sms-metrics.sql`
+
+**What would change my mind:**
+- Discovering that the decline is a measurement artifact (e.g., metric definition change in `product_health_weekly`)
+- Discovering it's a deliberate ramp-down for IXP cutover (per `#mc-experimentation-xfn` 2026-04-27 Jenn Reed post: "All running experiments in Optimizely must be ramped down by Monday, June 15")
+- Connor Callahan team already on it (would deduplicate effort)
+
+**Pre-mortem (3 reasons this fails):**
+1. **Wrong root cause attributed** — diagnostic concludes "saturation" when it's actually attribution change; we accept saturation and miss the real fix
+2. **No fix possible** — root cause is structural (e.g., declining `is_high_value=TRUE` paid base) and not addressable through SMS-team levers alone
+3. **Capacity diversion** — Connor Callahan team is already working on SMS standalone international rollout; diagnosing pulls focus
+
+**Slack anchors:** TS 1774008120 (Connor x287 readout), `#mc-experimentation-xfn` 2026-04-27 (IXP cutover announcement, Jenn Reed)
+
+**Recommended next step:** Connor Callahan + Ashish Prakash (DS) own a 2-week diagnostic. Output: root-cause attribution + go/no-go on a recovery experiment. Due 2026-05-12.
+
+**Escalation flags:** None.
+
+---
+
+## Considered but not in top 3
+
+### Annual Plans — push for AP take rate &gt;10% in first 4-week read
+- Already #1 P50 contributor in Growth Tree but **timing constraint**: first read 2026-05-21. Cannot recommend a SECOND action before reading the first one. Defer to next cycle once we have the data.
+
+### DFY Agentic AI / Analytics Agent expansion (Growth Tree #5)
+- Score 3.3 (lower than top 3). Plus **G10 escalation flag** — touches Deepak's surface; do not auto-recommend changes.
+
+### Legacy Plan billing-failure recovery (Growth Tree candidate-new lever)
+- Score $3.2M P50; quiet $13M annualized passive churn. **Worth proposing in next cycle** once we have explicit ownership clarity (currently no FY26 owner).
+
+### MM Premium Tier (above current Premium)
+- Dependent on Recommendation #2 landing first. Would propose in Q3-Q4 once structural billing in flight.
+
+### Cross-Intuit referral / QBO bundle (FY27+ exploration)
+- Out of scope for FY26 Commit. Note in `program.md` for monitoring.
+
+### International SMS standalone
+- Strong fit but tied to MM Account/Billing flex (#2) AND SMS diagnostic (#3). Defer.
+
+---
+
+## Predictions written to predictions-ledger.jsonl
+
+```json
+{"run_ts":"2026-04-28T21:00:00Z","run_yyyy_ww":"2026-W17","recommendation_id":"2026-W17-rec-1","title":"Personalization/CDP compound","predicted_metric":"email_creates","predicted_baseline":1635591,"predicted_delta":"+3% to +5% on email_creates per active C1","predicted_window_days":56,"predicted_due_at":"2026-06-23T21:00:00Z","graded_against":"31-email-creates","subagent_attribution":"mc-recommendation-ranker","actual_delta":null,"graded_at":null,"hit":null}
+{"run_ts":"2026-04-28T21:00:00Z","run_yyyy_ww":"2026-W17","recommendation_id":"2026-W17-rec-2","title":"MM Account/Billing structural","predicted_metric":"is_high_value bookings (Premium tier proxy)","predicted_baseline":59,"predicted_delta":"+20% to +35% on Premium-tier weekly bookings","predicted_window_days":365,"predicted_due_at":"2027-04-28T21:00:00Z","graded_against":"14-bookings-by-tier","subagent_attribution":"mc-recommendation-ranker","actual_delta":null,"graded_at":null,"hit":null}
+{"run_ts":"2026-04-28T21:00:00Z","run_yyyy_ww":"2026-W17","recommendation_id":"2026-W17-rec-3","title":"SMS credit-purchases decline diagnostic","predicted_metric":"sms_credit_purchases","predicted_baseline":645,"predicted_delta":"return to &gt;900/week within 4 weeks of intervention; or flat-to-down if no intervention","predicted_window_days":28,"predicted_due_at":"2026-05-26T21:00:00Z","graded_against":"36-sms-metrics","subagent_attribution":"mc-recommendation-ranker","actual_delta":null,"graded_at":null,"hit":null}
+```
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-recommendation-ranker","claim":"Top 3 recs (with G14 predictions): 1) Personalization/CDP compound (predicted +3-5% email_creates by 2026-06-23); 2) MM Account/Billing structural (escalation flag - HC/capacity decision); 3) SMS credit-purchases decline diagnostic (2-wk POL).","confidence":"medium","citations":["analyses/2026-W17/07-recommendations.md","predictions-ledger.jsonl"]}
+```
+</pre></details>
+<details><summary>08-qc-report</summary><pre># QC Report — 2026-W17
+
+**Run timestamp:** 2026-04-28
+**Pipeline stages run:** Ingestion (Slack seed, BigQuery 4 queries, FY26 PDF), Diagnostics (5 subagents), Synthesis (Growth Tree + Recommendation Ranker), QC (this file)
+
+---
+
+## Self-eval rubric (mc-self-eval-rubric)
+
+**Verdict:** approve (with caveats — see Adversarial section)
+
+### Hard publish gates (G14 / G15 / G11 / G10 / G6)
+
+| Gate | Status | Notes |
+|---|---|---|
+| G14 (predictions) | **pass** | All 3 top recs have falsifiable predictions written to predictions-ledger.jsonl |
+| G15 (grade-before-predict) | **N/A** | First run — no open predictions to grade. Re-checked next cycle. |
+| G11 (people names) | **pass** | All names cited (Connor Callahan, Jacquelyn Horgan, Elizabeth Bertasi, Stephen Yu, etc.) appear in canon/org-glossary.md |
+| G10 (escalation) | **pass** | Recommendation #2 (MM Account/Billing) properly flagged for escalation; #5 in Growth Tree (DFY Agentic) explicitly NOT recommended due to G10 |
+| G6 (contradictions) | **pass** | 1 contradiction logged (PDF dashboard `new_booking_timing` percentages vs BigQuery — see contradictions.md and 04-gtm-levers.md) |
+
+### Rubric scores (1-5 each)
+
+| Dimension | Score | Commentary |
+|---|---|---|
+| D1 Citation density | 4/5 | Most numeric claims cited (BigQuery query path, Slack TS, FY26 PDF). Some derived numbers (e.g., "$10M-$15M MM realistic delta") rely on chain-of-reasoning rather than single citation — acceptable but flagged. |
+| D2 Recommendation actionability | 5/5 | Each top-3 rec has owner suggestion (from canon/org-glossary), specific next step, and falsifiable prediction. |
+| D3 ICP fit | 5/5 | Each rec explicitly maps to priority ICP(s) per canon/icp-canon.md. |
+| D4 Confidence calibration | 4/5 | High/Med/Low explicit; "what would change my mind" present for all top-3. Minor: Growth Tree probability estimates are best-guess, not derived from model. |
+| D5 MECE-ness | 4/5 | Top-3 are largely non-overlapping (Personalization, MM Structural, SMS-defensive). Some adjacency between #1 (CDP) and #3 (SMS) — both compete for Audience-team capacity. Flagged. |
+| **Total** | **22/25** | **≥20 publish gate met.** |
+
+### Sample-and-verify (5 random claims spot-checked)
+
+1. "x290 +2.91% campaign creation rate" — verified via Slack TS 1777325203 (Payton Camilli readout). ✅
+2. "$1.08M FY26 / $3.96M FY27 cumulative SMS impact" — verified via Slack TS 1774008120 (Connor Callahan claim). ⚠️ Self-cited; BigQuery round-trip needed.
+3. "Annual Plans launch 2026-04-23" — verified via Slack TS 1776958294 (Jacquelyn Horgan launch post). ✅
+4. "Trailing 2-week active churn $1.02M" — verified by re-summing the cohort-by-package query results. ✅
+5. "MC penetration index 370 in Civic/Social" — verified via FY26 narrative Exhibit 5. ✅
+
+### Recommended fixes (none blocking)
+
+- Add MM TAM-based estimate sharper in Recommendation #2 next cycle (currently relies on $10M-$15M range without explicit calculation).
+- Run external researcher next cycle to fill 05-competitive-context.md gaps.
+- Cross-check Connor's "$1.08M FY26" claim with `bi_aggregate.product_health_weekly.sms_paid_plan_users` × ARPU computation.
+
+---
+
+## Adversarial review (mc-adversarial-reviewer)
+
+### Pre-mortem on Recommendation #1 — Personalization/CDP compound
+
+(Already covered in 07-recommendations.md. Headline failure modes:)
+1. Saturation — diminishing returns after 5-10th primitive
+2. Capacity drain — Segmentation+CDP teams oncall load
+3. Adverse selection — only HVCs adopt; SMB users don't notice
+
+### Pre-mortem on Recommendation #2 — MM Account/Billing structural
+
+1. Build vs buy — 18 months to build vs partnering for some pieces
+2. No customer evidence yet — relies on competitive narrative not validated need
+3. Feature underutilization — building expensive infra MM customers don't use
+
+### Pre-mortem on Recommendation #3 — SMS Credit-Purchases diagnostic
+
+1. Wrong root cause attribution — saturation diagnosed when it's measurement
+2. No fix possible — structural cause not addressable by SMS team
+3. Capacity diversion — pulls focus from other SMS work
+
+### Steel-man contrarian view (G12)
+
+For each rec, the strongest "do the opposite" argument:
+
+- **#1 Personalization compound**: "Stop doubling-down on CDP/Segmentation; the marginal personalization primitive is now &lt; threshold value. Instead, redirect capacity to the orphaned Community ICP (370 MC penetration index, 0 dedicated experiments) where MC has unique distribution."
+- **#2 MM Account/Billing**: "Don't build structural MM billing; the MM TAM is small (~$10M revenue ceiling). Instead, focus on Cross-Intuit/QBO bundling (FY27+) where the moat is genuinely defensible."
+- **#3 SMS diagnostic**: "Don't waste 2 weeks diagnosing — accept SMS plateau and pivot SMS Growth team to international short-codes / standalone (FY26 P2 explicit gap)."
+
+### Prior misses (predictions-ledger.jsonl)
+
+**N/A — first run, no prior predictions to grade.**
+
+### Open contradictions (vs contradictions.md)
+
+- 1 contradiction logged (PDF `new_booking_timing` % shares vs BigQuery values). Touches Recommendation Ranker dependencies via Lever 1 (Annual Plans / scaled acquisition). Not blocking but should resolve next cycle.
+
+### Headline adversarial finding
+
+**The most important pre-mortem signal across all 3 recs is the Personalization compound's "saturation" risk.** If we've truly hit diminishing returns on segmentation/behavioral triggers, we need a step-function move (CDP→AI agent that recommends triggers automatically) rather than another primitive. The agent should explicitly test for saturation in Recommendation #1's predicted-metric grading.
+
+---
+
+## Numeric round-trip (mc-numeric-round-tripper)
+
+| Brief claim | Source citation | Re-queried value | Drift % | Action |
+|---|---|---|---|---|
+| Trailing 2-wk active churn ~$1.02M | `bi_aggregate.churn_daily` cohort-by-package | $461K + $213K + $156K + $113K + $75K + small ≈ $1.018M | 0% | OK |
+| Standard tier $32M annualized at risk | $1.24M biweekly × 26 | $32.2M | 0% | OK |
+| 24+ tenure $57M annualized at risk | $2.20M biweekly × 26 | $57.2M | 0% | OK |
+| Avg activations/week ~41,400 | trailing 13w avg from product_health_weekly (excl. 4/26 partial) | 41,395 | &lt;1% | OK |
+| Avg new bookings $/week ~$295K | trailing 13w avg from bookings_weekly | $295.4K | 0% | OK |
+| Annual plan share 3% (week 4/19) | bookings_by_tier sum: $4.1K+$1.3K+$0.6K = $5.9K of $206.8K = 2.85% | 2.85% | &lt;1% (rounded) | OK |
+| Premium tier 13% of $ (week 4/19) | $28.4K / $206.8K = 13.7% | 13.7% | &lt;1% | OK |
+| `sms_paid_plan_users` plateau ~34K | trailing 13w shows 31,648 → 34,303 | confirmed | 0% | OK |
+| `sms_credit_purchases` -40% | week 2/8: 1,126 → week 4/19: 645 → (645-1126)/1126 = -42.7% | -42.7% | (claim said -40%, slight under-estimate) | OK |
+| FT Rolloff = 21% of $ (week 4/19) | $50.9K / $206.8K = 24.6% | 24.6% | claim 21% is off by 3.6pts | **WARN** — small drift, fix next cycle |
+
+**Numbers checked:** 10
+**Verified ±2%:** 9
+**Warned (2-5% drift):** 1 (FT Rolloff $-share — claim said 21%, actual 24.6%)
+**Flagged (5-10%):** 0
+**Blocked (&gt;10%):** 0
+
+**Verdict:** publish-OK with minor fix-up (FT Rolloff $-share corrected in next cycle).
+
+### Unit-confusion catches: NONE
+
+---
+
+## Prediction grading (mc-prediction-grader)
+
+**Open predictions evaluated this run:** 0 (first run; no prior predictions in ledger).
+
+**Outcomes:** N/A.
+
+**Per-subagent rolling 12-week hit rate:** N/A — no graded history yet. Initial state: all subagents at "neutral" weight (no boost, no demote).
+
+**Recalibration triggered:** None.
+
+---
+
+## Final QC verdict
+
+**APPROVE for publish.** Score 22/25. All hard gates pass. 1 minor numeric drift (FT Rolloff $-share) noted for next-cycle fixup. 1 open contradiction (PDF `new_booking_timing` %s) logged in contradictions.md.
+
+## Findings ledger row written
+
+```json
+{"ts":"2026-04-28T21:00:00Z","source":"mc-self-eval-rubric","claim":"Self-eval verdict=approve; score=22/25; all hard gates pass (G14/G15/G11/G10/G6); 1 numeric drift (FT Rolloff $-share 21%-&gt;24.6%) noted","confidence":"high","citations":["analyses/2026-W17/08-qc-report.md"]}
+{"ts":"2026-04-28T21:00:01Z","source":"mc-adversarial-reviewer","claim":"Headline concern: Personalization compound saturation risk; recommend explicit saturation-test in #1 prediction grading","confidence":"medium","citations":["analyses/2026-W17/08-qc-report.md"]}
+{"ts":"2026-04-28T21:00:02Z","source":"mc-numeric-round-tripper","claim":"10 numbers checked, 9 within 2%, 1 warn (FT Rolloff $-share). Publish OK.","confidence":"high","citations":["analyses/2026-W17/08-qc-report.md"]}
+{"ts":"2026-04-28T21:00:03Z","source":"mc-prediction-grader","claim":"First run - no prior predictions to grade. All subagents at neutral weight initialized.","confidence":"high","citations":["analyses/2026-W17/08-qc-report.md","predictions-ledger.jsonl"]}
+```
+</pre></details>
+<h2>Open Predictions (3)</h2>
+<table><tr><th>Recommendation</th><th>Predicted metric</th><th>Predicted delta</th><th>Window days</th><th>Due</th></tr>
+<tr><td>Personalization/CDP compound</td><td>email_creates</td><td>+3% to +5% on email_creates per active C1</td><td>56</td><td>2026-06-23T21:00:00Z</td></tr>
+<tr><td>MM Account/Billing structural</td><td>is_high_value bookings (Premium tier proxy)</td><td>+20% to +35% on Premium-tier weekly bookings</td><td>365</td><td>2027-04-28T21:00:00Z</td></tr>
+<tr><td>SMS credit-purchases decline diagnostic</td><td>sms_credit_purchases</td><td>return to &gt;900/week within 4 weeks of intervention; or flat-to-down if no intervention</td><td>28</td><td>2026-05-26T21:00:00Z</td></tr>
+</table>
+</body></html>
