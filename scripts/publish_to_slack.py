@@ -22,10 +22,12 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 DEFAULT_DM_USER = "W8FL6URHQ"  # Deepak per canon/org-glossary.md
+# Live as of 2026-04-29 — see https://github.com/deepakp1308/mailchimp-growth-strategist
 DASHBOARD_BASE = os.environ.get(
     "MC_GROWTH_DASHBOARD_URL",
     "https://deepakp1308.github.io/mailchimp-growth-strategist/",
 )
+ARCHIVE_BASE = DASHBOARD_BASE.rstrip("/") + "/archive/"
 
 
 def current_iso_week() -> str:
