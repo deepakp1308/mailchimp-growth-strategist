@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+# Mailchimp Growth Strategist - 3-tier access enforcement
+# Per Plan §2 Access Tiers + §6 Guardrail G13.
+#
+# Tier 1 (Human-only) : program.md, canon/*, queries/*.sql -- agent must NOT change
+# Tier 2 (Append-only): findings-ledger.jsonl, predictions-ledger.jsonl, knowledge/** -- agent must only ADD lines/files
+# Tier 3 (Agent-edit) : analyses/**, dashboards/**, contradictions.md -- agent regenerates freely
+#
+# How to use:
+#   - When the agent commits, set env var AGENT_COMMIT=1 (the orchestrator skill should always set this).
+#   - Human commits leave AGENT_COMMIT unset and bypass Tier-1 protection.
+#   - Tier-2 deletion check runs for ALL commits (no one should ever delete ledger lines).
+
+set -euo pipefail
+
+if ! command -v git >/dev/null 2>&1; then
+  echo "pre-commit: git not found" >&2
+  exit 1
+fi
+
+CHANGED=$(git diff --cached --name-only)
+
+# Tier 1: human-only files
+TIER1_PATTERN='^(program\.md|canon/|queries/.*\.sql)'
+TIER1_VIOLATIONS=$(printf '%s\n' "$CHANGED" | grep -E "$TIER1_PATTERN" || true)
+
+# Tier 2: append-only files (both ledgers + knowledge/**)
+TIER2_PATTERN='^(findings-ledger\.jsonl|predictions-ledger\.jsonl|knowledge/)'
+TIER2_TOUCHED=$(printf '%s\n' "$CHANGED" | grep -E "$TIER2_PATTERN" || true)
+
+# === Tier 1 enforcement ===
+if [ -n "${AGENT_COMMIT:-}" ] && [ -n "$TIER1_VIOLATIONS" ]; then
+  echo ""
+  echo "ERROR: Pre-commit blocked. (Plan G13 - Access tier separation)"
+  echo "AGENT_COMMIT=1 is set, meaning the agent is committing, but the agent attempted to modify Human-only files:"
+  echo ""
+  printf '  %s\n' "$TIER1_VIOLATIONS"
+  echo ""
+  echo "Human-only files: program.md, canon/*, queries/*.sql"
+  echo "Only Deepak edits these. The orchestrator must abort this run and alert."
+  echo ""
+  exit 1
+fi
+
+# === Tier 2 enforcement: forbid line deletions in ledgers (any committer) ===
+LEDGER_FILES=$(printf '%s\n' "$CHANGED" | grep -E '^(findings-ledger\.jsonl|predictions-ledger\.jsonl)$' || true)
+for f in $LEDGER_FILES; do
+  # Show staged diff vs HEAD; check if any '-' lines (excl. file header) exist
+  DELETIONS=$(git diff --cached -- "$f" | grep -E '^-[^-]' || true)
+  if [ -n "$DELETIONS" ]; then
+    echo ""
+    echo "ERROR: Pre-commit blocked. (Plan G13 - Append-only enforcement)"
+    echo "File $f had lines deleted/modified. Ledgers are append-only."
+    echo "If a finding is superseded, append a NEW row referencing the prior row's id in 'superseded_by'."
+    echo ""
+    echo "Deleted/modified lines:"
+    echo "$DELETIONS"
+    echo ""
+    exit 1
+  fi
+done
+
+# === Tier 2 enforcement: forbid deletions inside knowledge/ ===
+KNOWLEDGE_DELETIONS=$(git diff --cached --name-only --diff-filter=D | grep -E '^knowledge/' || true)
+if [ -n "$KNOWLEDGE_DELETIONS" ]; then
+  echo ""
+  echo "ERROR: Pre-commit blocked. (Plan G13 - Append-only enforcement)"
+  echo "Files deleted from knowledge/ (append-only tier):"
+  printf '  %s\n' "$KNOWLEDGE_DELETIONS"
+  echo ""
+  echo "Knowledge ingestion artifacts must not be deleted. Add a 'superseded' marker file instead."
+  echo ""
+  exit 1
+fi
+
+# All checks passed
+exit 0

@@ -1,0 +1,32 @@
+# Mailchimp Growth Strategist — example crontab entry
+#
+# Add to your user crontab via `crontab -e`:
+#
+# Monday 7am Pacific Time = 14:00 UTC (PST winter) or 15:00 UTC (PDT summer).
+# Pick the one matching your current TZ, or use a TZ-aware wrapper.
+#
+# Format: m h dom mon dow command
+#
+# Mon 7am PT (handle both PST/PDT correctly: rely on the system's local TZ):
+
+0 7 * * 1   cd /Users/dprabhakara/cursor/mailchimp-growth-strategist && bash scripts/run_weekly.sh > /tmp/mc-growth-cron.log 2>&1
+
+# That command:
+#   1. Prepares the weekly run dir and prints the orchestrator-invocation prompt.
+#   2. Output is logged to /tmp/mc-growth-cron.log.
+#
+# To actually invoke the agent, you have two options:
+#
+# Option A (manual): receive the cron output as a notification, then paste the
+# orchestrator prompt into a Cursor chat.
+#
+# Option B (automated): wrap with `cursor agent --headless` (if/when Cursor CLI
+# supports headless invocations of skills). Example draft:
+#
+#   0 7 * * 1   cd /Users/dprabhakara/cursor/mailchimp-growth-strategist && \
+#               bash scripts/run_weekly.sh && \
+#               cursor agent --headless "Run mailchimp-growth-strategist orchestrator for $(date +%G-W%V)"
+#
+# Option C (background subagent): trigger via `cursor agent` from a Cursor
+# `sessionStart` hook so it's prompted whenever you open Cursor on a Monday.
+# See .cursor/hooks.json + .cursor/hooks/check-weekly.sh in this repo.

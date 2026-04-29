@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "name": "mc-growth-weekly-nudge",
+        "description": "If today is Monday and the most recent weekly analysis is >5 days old, nudge the user to run the weekly Mailchimp Growth Strategist cycle.",
+        "type": "command",
+        "command": ".cursor/hooks/check-weekly.sh",
+        "failureMode": "fail-open"
+      }
+    ]
+  }
+}
