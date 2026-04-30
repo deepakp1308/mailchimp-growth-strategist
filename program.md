@@ -12,11 +12,19 @@
 
 ## 1. Headline Question
 
-**How does Mailchimp add $50M incremental revenue on top of current FY26 trajectory, within the next 12-18 months?**
+**How does Mailchimp add $50M incremental revenue on top of current FY26 trajectory, within the next 12-18 months — and what's the specific R&A + Analytics AI contribution Deepak should drive first?**
+
+**Priority ordering for every recommendation output:**
+
+1. **OWN tier (FIRST)** — Recommendations in the R&A + Analytics AI surface (see `canon/ra-ai-surface.md`). Deepak can directly commission.
+2. **INFLUENCE tier** — Adjacent surfaces where R&A is a consumer OR provides the reporting layer.
+3. **ESCALATE tier** — Out-of-scope strategic moves the agent should surface for SLT decision.
 
 Sub-questions to keep front and center:
 
+- **What's the single largest R&A + AI-Agent play Deepak should commission THIS quarter?** (leading question every run)
 - Where in the **Growth Tree** (Paid Users × ARPU × (1 - Churn) × (1 + Expansion)) is the largest realistic delta?
+- How much of the $50M ask can Deepak's OWN surface deliver? Where are the dependencies on INFLUENCE partners?
 - Which **FY26 priorities are actually moving** the metrics they were supposed to move?
 - Which **launched features/experiments** are paying off vs. underperforming?
 - Where are we **shipping things not in the plan** (and why)?
@@ -37,6 +45,17 @@ Sub-questions to keep front and center:
 | H7 | "Done-for-you" agentic AI (Analytics Agent v1, Acquisition Agent in development) has not yet shown measurable revenue impact — claims of 6% lift in email creates need to be re-validated at scale | Project Alfred 2026-03-13 thread, `bi_aggregate.product_health_weekly` (email_creates) | Low (claims-pending-verification) |
 
 The agent should **continuously re-evaluate** these and propose new hypotheses.
+
+### R&A + AI Agent–specific active hypotheses (OWN tier)
+
+| # | Hypothesis | Where to look | Confidence prior |
+|---|---|---|---|
+| RA1 | Scaling Analytics Agent V1 from 50K to the full paid base preserves its measured lift (+6% email creates per user; >99% prob to beat control) and is worth $3M-$5M annualized | `bi_aggregate.product_health_weekly.email_creates`, Project Alfred V1 readout Slack TS 1772468019 | High (one measured experiment; need scale-validation) |
+| RA2 | Productizing churn-prediction insights inside Analytics Agent (surfacing them to CSMs + C1s) recovers 10-20% of the $76.5M annualized MRR-at-risk ≈ $7.5M-$15M | `bi_aggregate.churn_daily` cohorts + Analytics Agent current insight pipeline | Medium |
+| RA3 | Fixing "Export fields stripped", "Data Accuracy", "Reporting UX regression" (top-3 VOC themes from last-stretch-voc-analyzer) unlocks HVC retention worth $0.5M-$2M | last-stretch-voc-analyzer dashboard + `bi_reporting.users_*` | Medium |
+| RA4 | Ecomm-specific reporting (GMV, ROI, product-level attribution) is worth $2M-$5M via Ecomm retention + premium-tier upsell | FY26 narrative Ecomm P2 + `bookings_by_tier` | Medium |
+| RA5 | Annual Plans first-class reporting & attribution accelerates the Plans team's decision cycle, unblocking ~$0.3M-$0.8M of incremental AP impact in-year | Annual Plans launch Slack TS 1776958294 + reporting dependencies | Medium |
+| RA6 | A "Why am I losing customers" DFY diagnostic Agent is a differentiated capability (Klaviyo & HubSpot lack) worth $2M-$4M | Analytics Agent V2 roadmap + churn diagnostic data | Low-Medium (unvalidated) |
 
 ---
 

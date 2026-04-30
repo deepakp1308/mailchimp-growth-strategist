@@ -1,200 +1,245 @@
-# Recommendations (Ranked) — 2026-W17
+# Recommendations (Ranked by Ownership Tier) — 2026-W17
 
-**Run timestamp:** 2026-04-28
-**Source inputs:** Growth Tree (06), Strategy Reconciler (01), Experiment Synthesizer (02), Churn Diagnostic (03), GTM Levers (04), Competitive Context (05)
+**Run timestamp:** 2026-04-29 (rewritten with OWN/INFLUENCE/ESCALATE ownership lens)
+**Source inputs:** RA opportunities (09), Growth Tree (06), Strategy Reconciler (01), Experiment Synthesizer (02), Churn Diagnostic (03), GTM Levers (04), Competitive Context (05)
 
-## Top 3 (Commit / Conditional Commit)
+## Ownership-tier summary
+
+| Tier | Count shown | P50 sum | % of $50M |
+|---|---|---|---|
+| **OWN** (Deepak commissions directly) | 3 Commit + 2 Conditional | ~$8.4M | 17% |
+| **INFLUENCE** (Deepak co-sponsors with partner PMs) | 2 | ~$9.4M | 19% |
+| **ESCALATE** (SLT decisions) | 2 | ~$4.4M | 9% |
+| **Stack total (top recs)** | | **~$22M** | **44%** |
+
+> **R&A alone cannot close $50M.** The realistic stack combining Deepak's OWN work + INFLUENCE partners + ESCALATE asks reaches ~44% of the target. The remaining ~56% is either (a) beyond 12-month horizon or (b) requires new levers not yet in motion (see Growth Tree § Candidate NEW levers).
 
 ---
 
-### Recommendation #1 — Double-down on the Personalization / CDP compound — **Commit**
+## PART 1 — OWN tier (Deepak commissions directly) [3 Commit + 2 Conditional]
 
-**Why this lever, not another:** It's the strongest *pattern of evidence* in the entire portfolio: 4 stacked wins (x290 Inline Search, Joins Segment trigger, Sections Manager, Meta Custom Audience GA) all at the CDP + Segmentation + Behavioral-trigger layer. P50 delta = $4.9M (highest score in Growth Tree, score 6.4).
+### Recommendation #1 — **Scale Analytics Agent V1 → V2 full paid base** [OWN, Commit]
 
-**Gates:**
-- G1 Strategy fit: **PASS** — maps to FY26 P3 (Integrations & Data Enablement) for MM and to P1 (Personalization Depth) for Ecomm
-- G2 Evidence: **STRONG** — 4 concluded clear-wins, latest (x290) +2.91% campaign creation rate, Slack TS 1777325203
-- G3 ICP fit: **PASS** — addresses all 3 priority ICPs (cross-cutting capability)
-- G4 Capacity: **MEDIUM** — would extend the Audience/CDP team's roadmap; some risk of displacing other Audience work
-- G5 Reversibility: **LOW** — experiment-first; each new behavioral trigger is independently shippable
+**Mechanism:** V1 measured +6% email campaigns/user lift with >99% significance in a 50K cohort (per Stephen Yu 2026-03-13, Slack TS 1772468019). Scaling to ~993K paid users — with honest lift attenuation — preserves 25% of measured lift = **~$4.0M P50 annualized**. Mechanism: AI-native conversational analytics → more campaigns sent → more retained engagement → lower churn + higher ARPU.
 
-**Pillars:**
-- P1 Revenue: **H** — $5M-$10M realistic across full compound (Joins Segment alone closes ~10% of automation-driven churn per 2023 HVC churn report)
-- P2 Strategy: **H** — direct match to FY26 P3 with multiple wins underway
-- P3 Customer-problem severity: **H** — segments with worst MRR churn (Standard tier $32M annualized, 24+ tenure $57M) are most reachable via behavioral triggers
-- P4 Evidence quality: **H** — 4 stacked wins, all with measured lift
-- P5 Execution feasibility: **H** — team has shipped 4 things already
-- P6 Time to impact: **M** — 9-12 months for full compound
-- P7 Differentiation: **M** — Klaviyo has Shopify-native CDP; we're at parity, not ahead
-- P8 Compounding: **H** — each new trigger compounds with prior (the namesake)
-- P9 Reversibility: **H** — experiment-first
+**Gates:** G1 Strategy=PASS (FY26 DFY Agentic P1), G2 Evidence=STRONG (1 concluded exp), G3 ICP=PASS (all 3), G4 Capacity=MEDIUM (1-2 HC), G5 Reversibility=LOW (experiment-first ramp)
 
-**Named mechanism:**
-> Each new behavioral-trigger primitive (e.g., "Joins Segment") makes existing automations more relevant to existing C2 data, which lifts campaign creation rate (+2.91% per x290) AND reduces automation-driven churn (~10% of HVC churners have automation-related drivers per 2023 report). Compounded across 5-10 new primitives over 9 months → mid-single-digit % retention lift on the highest-MRR cohorts.
-
-**ICP fit:** All three priority ICPs benefit (Subscription MM via segmentation depth, Community Small/LMM via behavioral re-engagement on registrants, Ecomm via Shopify+CDP product-data activation).
+**Pillars (≥1 High with named mechanism per G5):** P1 Revenue=H ($4.0M P50), P2 Strategy=H (FY26 P1 Agentic), P4 Evidence=H (>99% sig), P5 Execution=H (team shipped V1), P8 Compounding=H (unlocks B, F, G).
 
 **Predicted metric movement (G14):**
-- predicted_metric: `email_creates` (per `bi_aggregate.product_health_weekly`)
-- predicted_baseline: weekly avg ~1.6M creates (trailing 13w)
-- predicted_delta: +3% to +5% on `email_creates per active C1`
-- predicted_window_days: 56 (8 weeks — long enough for next wave of personalization features to ship + ramp)
-- graded_against: `queries/31-email-creates.sql`
+- Metric: `email_creates per active C1` 
+- Baseline: ~0.85 creates/active-user (trailing 13w)
+- Delta: **+3% to +6% creates/active-user once V2 reaches ≥500K users**
+- Window: 180 days
+- Graded against: `queries/31-email-creates.sql` + new normalization query
 
-**What would change my mind:**
-- If the next 2 personalization experiments (after Joins Segment) come in neutral/negative
-- If a competitor (especially Klaviyo) ships a step-function CDP advance that makes our trajectory feel commodity
-- If the Segmentation team's bandwidth is fully consumed by Joins-Segment follow-on operational work
+**Business case detail:** realistic P50 $4.0M / P90 $9.0M; probability 0.65; time to impact 9 months.
 
-**Pre-mortem (3 reasons this fails):**
-1. **Saturation** — we've already pulled the high-leverage levers; the 5th-10th personalization primitive yields diminishing returns
-2. **Capacity drain** — Joins Segment + x290 follow-up + new triggers all hitting Segmentation+CDP teams simultaneously creates an oncall load that slows everything
-3. **Adverse selection** — only HVC users adopt the new triggers; SMB users don't notice; lift comes from already-engaged customers, not the median
-
-**Slack anchors:** TS 1777383920 (Joins Segment), TS 1777325203 (x290 readout), TS 1774972805 (Sections Manager), TS 1776776408 (Meta Custom Audience)
-
-**Recommended next step:** Have Frank Persico (Segmentation EM) + Payton Camilli (Audience PM) propose the next 2 personalization experiments by 2026-05-12. Specifically push for: (a) behavioral pixel-trigger primitives, (b) Gmail-activity sync as a P3 priority lever.
-
-**Escalation flags:** None.
+**Capacity ask:** 1-2 HC on AI Agent eng + inference costs budget
+**Partner dependencies:** SMS Growth (data pipe), AI Science, DS, TPM
+**What would change my mind:** V2 beta cohort shows <1% lift at 200K scale (saturation ceiling hit early), or Klaviyo Breeze ships parity-level feature before our GA.
+**Pre-mortem:** Lift attenuation >expected; infra cost negative at scale; competitor response erases moat.
+**Recommended next step:** Lock V2 ramp plan with Stephen Yu (AI Agent PM) + Kuntal Naphade (Eng) by **2026-05-12**. Define the 200K → 500K → full-base ramp gates with attenuation thresholds.
 
 ---
 
-### Recommendation #2 — Stand up an MM Account/Billing structural workstream — **Conditional Commit**
+### Recommendation #2 — **Productize Churn-Prediction insights in Analytics Agent** [OWN, Commit]
 
-**Why this lever, not another:** It's FY26 Priority 1 for MM Subscription/Community ICPs with **zero structural launches in 9 months** (per Strategy Reconciler 01-* file). The MM ICP represents ~$10-15M realistic delta. Klaviyo and HubSpot already have parity (per FY26 narrative explicit citation). Every week we delay widens the parity gap.
+**Mechanism:** Annualized MRR-at-risk = $76.5M (per 03-churn-diagnostic). 75% concentrated in 24+ tenure and Standard-tier. Surfacing propensity-model outputs inside Analytics Agent (for C1s AND CSMs) enables intervention at onset of churn signal instead of after billing failure. Conservative recovery assumption: 15% of actually-lost MRR (industry benchmark) = **~$5.5M P50 annualized**.
 
-**Gates:**
-- G1 Strategy fit: **PASS** — explicit FY26 P1 for MM Subscription + Community
-- G2 Evidence: **MODERATE** — Annual Plans is showing the team can ship pricing/billing-term experiments; structural billing infra is unproven internally
-- G3 ICP fit: **PASS** — directly serves Subscription MM (high value, moderate PMF) and Community (moderate value, high PMF)
-- G4 Capacity: **HIGH (escalate)** — likely requires HC investment or significant reprioritization. **ESCALATE** for Deepak / SLT decision.
-- G5 Reversibility: **MEDIUM-HIGH** — architectural investment; commit-once-then-iterate
+**Gates:** G1=PASS (FY26 $14.9M churn reduction target), G2=MODERATE (cohort data strong, no end-to-end exp yet), G3=PASS-PARITY, G4=HIGH (2-3 HC + DS), G5=LOW (experiment-first)
 
-**Pillars:**
-- P1 Revenue: **M** — $5M-$15M long-tail; not bookable in FY26
-- P2 Strategy: **H** — explicit FY26 P1; the gap is the most-cited unaddressed priority
-- P3 Customer-problem severity: **H** — competitive-parity signal: Klaviyo + HubSpot serve MM today, we're losing accounts on this dimension (anecdotal — needs win/loss data)
-- P4 Evidence quality: **L** — claim relies on FY26 narrative + competitive narrative, NOT a concluded internal experiment
-- P5 Execution feasibility: **M** — Plans/PLC team just shipped Annual Plans + Place of Supply tax; capacity in adjacent space exists but structural billing is a different scope
-- P6 Time to impact: **L** — 12-18 months
-- P7 Differentiation: **M** — catches up to competitor parity, doesn't differentiate
-- P8 Compounding: **H** — once landed, unlocks MM-tier upsell + cross-Intuit bundling (FY27+)
-- P9 Reversibility: **L** — billing infra changes are hard to roll back
-
-**Named mechanism:**
-> Multi-entity + parent-child + SSO + ACH/wire + contract-with-price-lock removes the structural blockers that today force MM customers to choose Klaviyo or HubSpot at the $5M-$10M revenue ceiling. Closing this gap converts a fraction of the ~10% of MM-eligible MC users who today churn or downgrade because of operational-fit failures (estimate, needs win-loss validation).
-
-**ICP fit:** Subscription MM (primary), Community Small/LMM (secondary).
+**Pillars:** P1 Revenue=H ($5.5M P50), P2 Strategy=H (direct FY26 match), P3 Customer-problem=H ($76.5M at-risk), P4 Evidence=M (no concluded exp in this combination), P5 Execution=M (DS precedent via SMS propensity).
 
 **Predicted metric movement (G14):**
-- predicted_metric: `is_high_value=TRUE bookings_users` (Premium tier proxy for MM)
-- predicted_baseline: ~52 Premium users/week + ~7 Premium-Annual = ~59/week (week 4/19)
-- predicted_delta: +20% to +35% on Premium-tier weekly bookings within 12 months of structural billing infra landing
-- predicted_window_days: 365 (long horizon — this is a structural bet)
-- graded_against: `queries/14-bookings-by-tier.sql`
+- Metric: **Active churn MRR** (from `bi_aggregate.churn_daily.active_churn_risk_orders`)
+- Baseline: ~$26.5M annualized
+- Delta: **-5% to -10% on active churn MRR within 12 months**
+- Window: 365 days
+- Graded against: `queries/22-active-churn-mrr.sql`
 
-**What would change my mind:**
-- Win/loss data (when piped) shows MM customers churn for reasons OTHER than billing infrastructure (e.g., feature gaps in agentic AI)
-- Klaviyo or HubSpot meaningfully reduces MM-tier price/feature gap, making MC the value option
-- Plans/PLC capacity is needed for higher-priority P&L work
+**Business case:** P50 $5.5M / P90 $11M; probability 0.5; time to impact 6-9 months. **Highest-score OWN bet** (4.4).
 
-**Pre-mortem (3 reasons this fails):**
-1. **Build vs buy** — building multi-entity from scratch takes 18 months; by then competitors lap us. Should evaluate buying or partnering (Salesforce-style) for some pieces.
-2. **No customer evidence** — assumption that MM customers churn over billing infra; without Gong/Heymarvin transcripts, this is hypothesis, not validated need.
-3. **Feature underutilization** — Klaviyo's MM customers reportedly use only 30-40% of advanced features; building expensive structural infra that customers don't use is the worst outcome.
-
-**Slack anchors:** TS 1776958294 (Annual Plans launch — adjacent work proves PLC team capacity), FY26 narrative (canon/fy26-strategy.md)
-
-**Recommended next step:** Run a 2-week discovery (≤30 customer-conversation budget) to validate the "MM customers churn over billing-infra" hypothesis BEFORE committing structural eng work. Owner suggestion: Jacquelyn Horgan (Plans PM) + UXR partnership.
-
-**Escalation flags:** ⚠️ **G4 capacity HIGH** — requires HC or major reprioritization. **ESCALATE** to Deepak / SLT for explicit decision before commit.
+**Capacity ask:** 2-3 HC AI Agent eng + 1 DS allocation
+**Partner dependencies:** Data Science (Ashish Prakash, Jeremy Diaz, Himanshu Dubey); ⚠️ **Gainsight/CSM integration is the 2x leverage multiplier — currently a coverage gap.**
+**What would change my mind:** Propensity-model precision <60% in pilot (false-positive avalanche kills CSM adoption); OR Gainsight integration proves impossible in 12 months (cap at C1-self-serve only).
+**Pre-mortem:** Model precision problem; intervention fails (identifying at-risk is easy, recommending right action is hard); CSM pipe never lands.
+**Recommended next step:** 2-week scoping sprint with Ashish Prakash (DS) to validate model precision on HVC cohort. Then decide: full-launch vs. HVC-only POL. Due **2026-05-19**.
 
 ---
 
-### Recommendation #3 — Diagnose the SMS Credit-Purchases decline (was #4 in Growth Tree but high urgency) — **Conditional Commit (POL/Probe first)**
+### Recommendation #3 — **Annual Plans reporting & attribution accelerator** [OWN, Commit]
 
-**Why this lever, not another:** SMS expansion is the most-proven motion ($1.08M FY26 / $3.96M FY27 cumulative wins per Connor Callahan). BUT `bi_aggregate.product_health_weekly.sms_credit_purchases` is **declining 40% over 11 weeks** (week 2/8: 1,126 → week 4/19: 645). If unaddressed, this could erode the cumulative lift. It's a quiet metric drift that the org is not currently focused on.
+**Mechanism:** Annual Plans experiment live 2026-04-23; first read ~2026-05-21. Predicted FY27 incremental $1.3M-$3.9M per launch post. R&A lacks first-class AP reporting. Mechanism: ship AP dashboard in <4 weeks → Plans team reads faster → iterates twice in 12-week window vs. once → **pull 20-30% of FY27 impact into FY26**.
 
-**Gates:**
-- G1 Strategy fit: **PASS** — FY26 P2 Channel Expansion + Expansion-sales motion
-- G2 Evidence: **MODERATE** — 11-week BigQuery trend is clear; cause is not yet diagnosed (could be saturation, attribution change, or upstream funnel issue)
-- G3 ICP fit: **PASS-PARITY** — SMS serves all ICPs
-- G4 Capacity: **LOW** — diagnostic work, not new build
-- G5 Reversibility: **LOW** — diagnostic-only; no commitment
+**Gates:** G1=PASS (unblocks Plans bet), G2=STRONG (live experiment), G3=PASS (all 3 ICPs via trial-entry), G4=LOW (1 eng + 1 analyst, 2-week sprint), G5=LOW
 
-**Pillars:**
-- P1 Revenue: **M** — currently a defensive recommendation (preserve $4.5M P50 in stack); not net-new
-- P2 Strategy: **H** — protects FY26 P2 lever
-- P3 Customer-problem severity: **M** — needs investigation; could be customer-driven or platform-driven
-- P4 Evidence quality: **H** — BigQuery trend is unambiguous
-- P5 Execution feasibility: **H** — SMS Growth team (Connor Callahan) has capacity for diagnostic work
-- P6 Time to impact: **H (fast)** — 2-week diagnostic
-- P7 Differentiation: **M** — SMS is parity, not differentiation
-- P8 Compounding: **M** — protects existing compound
-- P9 Reversibility: **H** — diagnostic only
-
-**Named mechanism:**
-> A 40% decline in `sms_credit_purchases` over 11 weeks suggests one of: (a) saturation in current credit-purchase motion (we've converted the easy users), (b) upstream funnel issue (fewer Standard+Premium users on the audience-page where x287 fires), (c) attribution change (SMS purchases moved to a different metric / event), (d) deliberate slowdown for IXP cutover. Each of these requires a different fix, but ALL require diagnosis before doubling down on x287-style follow-on experiments.
-
-**ICP fit:** All — defensive across portfolio.
+**Pillars:** P1 Revenue=M ($0.55M in-year acceleration), P2 Strategy=H (unblocks Plans), P3 Customer-problem=M (PM decision speed), P4 Evidence=STRONG, P5 Execution=H, P6 Time-to-impact=**H** (fastest win).
 
 **Predicted metric movement (G14):**
-- predicted_metric: `sms_credit_purchases` (weekly)
-- predicted_baseline: 645 (week 4/19)
-- predicted_delta: diagnostic identified by 2026-05-19; if root-caused and addressed, return to >900/week within 4 weeks of intervention; if NOT root-caused, stay flat or decline further
-- predicted_window_days: 28
-- graded_against: `queries/36-sms-metrics.sql`
+- Metric: **time from experiment start to in-brief readout**
+- Baseline: ~28 days historically
+- Delta: **<14 days for AP experiment readouts**
+- Window: 42 days
+- Graded against: qualitative audit + Plans PM confirmation
 
-**What would change my mind:**
-- Discovering that the decline is a measurement artifact (e.g., metric definition change in `product_health_weekly`)
-- Discovering it's a deliberate ramp-down for IXP cutover (per `#mc-experimentation-xfn` 2026-04-27 Jenn Reed post: "All running experiments in Optimizely must be ramped down by Monday, June 15")
-- Connor Callahan team already on it (would deduplicate effort)
+**Business case:** P50 $0.55M / P90 $1.0M; probability 0.75; time to impact 4-6 weeks. **Highest-speed, lowest-capacity-cost OWN bet.**
 
-**Pre-mortem (3 reasons this fails):**
-1. **Wrong root cause attributed** — diagnostic concludes "saturation" when it's actually attribution change; we accept saturation and miss the real fix
-2. **No fix possible** — root cause is structural (e.g., declining `is_high_value=TRUE` paid base) and not addressable through SMS-team levers alone
-3. **Capacity diversion** — Connor Callahan team is already working on SMS standalone international rollout; diagnosing pulls focus
-
-**Slack anchors:** TS 1774008120 (Connor x287 readout), `#mc-experimentation-xfn` 2026-04-27 (IXP cutover announcement, Jenn Reed)
-
-**Recommended next step:** Connor Callahan + Ashish Prakash (DS) own a 2-week diagnostic. Output: root-cause attribution + go/no-go on a recovery experiment. Due 2026-05-12.
-
-**Escalation flags:** None.
+**Capacity ask:** 1 R&A Eng + 1 data analyst; 2-week sprint
+**Partner dependencies:** Plans PM (Jacquelyn Horgan), FinOps, DS (Ethan Ham), Finance
+**Recommended next step:** Kick off this week. Request experiment-design doc from Jacquelyn Horgan by **2026-05-05**; target dashboard GA by **2026-05-19** (ahead of first read).
 
 ---
 
-## Considered but not in top 3
+### Recommendation #4 — **Ecomm-specific reporting (GMV, ROI, per-product attribution)** [OWN, Conditional Commit]
 
-### Annual Plans — push for AP take rate >10% in first 4-week read
-- Already #1 P50 contributor in Growth Tree but **timing constraint**: first read 2026-05-21. Cannot recommend a SECOND action before reading the first one. Defer to next cycle once we have the data.
+**Mechanism:** Digital Sales-based ICP (21% of user base, 25% of revenue) needs GMV + ROI + per-product attribution to justify MC spend. Currently parity gap with Klaviyo. Mechanism: Ecomm customers with visible ROI retain longer + upgrade to Premium at higher rates.
 
-### DFY Agentic AI / Analytics Agent expansion (Growth Tree #5)
-- Score 3.3 (lower than top 3). Plus **G10 escalation flag** — touches Deepak's surface; do not auto-recommend changes.
+**Gates:** G1=PASS (FY26 Ecomm P2), G2=MODERATE (narrative + competitive, no internal exp), G3=PASS (Ecomm ICP), G4=MEDIUM, G5=MEDIUM
 
-### Legacy Plan billing-failure recovery (Growth Tree candidate-new lever)
-- Score $3.2M P50; quiet $13M annualized passive churn. **Worth proposing in next cycle** once we have explicit ownership clarity (currently no FY26 owner).
+**Conditional on:** Audience/CDP team (Payton Camilli) committing to Shopify product-catalog data activation in H1 FY26. Without that upstream commit, **defer to FY27**.
 
-### MM Premium Tier (above current Premium)
-- Dependent on Recommendation #2 landing first. Would propose in Q3-Q4 once structural billing in flight.
+**Predicted metric movement (G14):**
+- Metric: **Connected-ecomm user 6mo churn rate**
+- Baseline: 31%
+- Delta: **-1.5pt to -3pt** once ROI dashboards ship + ≥20% of ECU base adopts
+- Window: 365 days
+- Graded against: `queries/40-cohort-churn-by-package.sql` with ecomm_status filter
 
-### Cross-Intuit referral / QBO bundle (FY27+ exploration)
-- Out of scope for FY26 Commit. Note in `program.md` for monitoring.
+**Business case:** P50 $2.5M / P90 $5M; probability 0.5; time to impact 9-12 months.
 
-### International SMS standalone
-- Strong fit but tied to MM Account/Billing flex (#2) AND SMS diagnostic (#3). Defer.
+**Recommended next step:** Formalize the dependency ask with Payton Camilli this month. If no upstream commit by **2026-05-26**, defer to FY27 and redirect capacity to Rec #7 (Predictive upsell).
+
+---
+
+### Recommendation #5 — **Top-3 Reporting UX VOC fixes (Export fields, Data Accuracy, A/B export)** [OWN, Conditional Commit (POL-first)]
+
+**Mechanism:** Per `last-stretch-voc-analyzer` (existing agent), top-3 R&A VOC themes recur weekly. HVC-concentrated ($6,664 MRR World Central Kitchen; $3,488 MRR HC Brands flagged). Mechanism: fix → unblock HVC workflow → reduce HVC churn signal → preserve high-ARPU revenue.
+
+**Gates:** G1=PASS, G2=STRONG (VOC data), G3=PASS-PARITY (HVC-weighted, skews to all-ICP HVCs), G4=LOW (1 Eng + 1 Designer), G5=LOW
+
+**POL/Probe first:** Before committing full build, run a 2-week diagnostic — is R&A VOC actually causing HVC churn, or just co-occurring? Cross-reference VOC-user list with churn-risk cohort from `churn_daily`.
+
+**Predicted metric movement (G14):**
+- Metric: **HVC-weighted R&A VOC volume (per last-stretch-voc-analyzer)**
+- Baseline: 50-120 R&A-themed VOCs/week
+- Delta: **-30% within 12 weeks of fix ship**
+- Window: 120 days
+- Graded against: last-stretch-voc-analyzer output (integration required — coverage gap Tier 3.1)
+
+**Business case:** P50 $0.75M / P90 $2M; probability 0.7; time to impact 3-6 months.
+
+**Recommended next step:** Deepak + 1 Eng scope the POL by **2026-05-12**. Cross-reference VOC-user list with `bi_aggregate.churn_daily` cohort to validate causation.
+
+---
+
+### Considered but not in top 5 (OWN tier)
+
+- **F — Predictive upsell agent in Analytics Agent** — P50 $3.4M × 0.4 probability. Good upside but 9-12 months and depends on Plans upgrade-flow integration. Defer to next cycle unless Rec #4 is cancelled.
+- **G — "Why am I losing customers" DFY agent** — P50 $3.0M × 0.4 probability. Highest differentiation vs Klaviyo/HubSpot. Depends on Rec #2 landing first. Defer to Q3 FY26 cycle.
+- **H — MM multi-entity reporting** — dependent on ESCALATE #2 (MM Account/Billing). DEFER.
+
+---
+
+## PART 2 — INFLUENCE tier (Deepak co-sponsors; partner PM commissions)
+
+### Recommendation #6 — **Personalization / CDP compound: next 2 primitives** [INFLUENCE, Commit]
+
+**Partner:** Payton Camilli (Audience PM) + Frank Persico (Segmentation EM).
+
+**Mechanism:** 4 stacked wins in this area (x290 Inline Search, Joins Segment, Sections Manager, Meta Custom Audience). Next primitives (behavioral pixel-triggers, Gmail-activity sync) compound. R&A consumes the output for Analytics Agent V2 (Rec #1).
+
+**Business case:** P50 $4.9M × probability 0.65 = $3.2M expected contribution. (Per Growth Tree.)
+
+**R&A role:** Analytics Agent V2 surfaces the insights generated by these new primitives. Co-sponsor, don't lead.
+
+**Predicted metric movement (G14):** (same as prior week)
+- Metric: `email_creates`
+- Delta: +3% to +5%
+- Window: 56 days
+
+**Recommended next step:** Deepak joins Payton + Frank's roadmap sync to ensure Analytics Agent V2 consumes the new primitives within the 9-month window for Rec #1.
+
+---
+
+### Recommendation #7 — **SMS credit-purchases decline diagnostic** [INFLUENCE, POL/Probe]
+
+**Partner:** Connor Callahan (SMS Growth PM) + Ashish Prakash (DS).
+
+**Mechanism:** `sms_credit_purchases` declining 42.7% over 11 weeks (per 04-gtm-levers). Protects the $4.5M P50 on SMS expansion lever. R&A provides the diagnostic dashboard.
+
+**Business case:** Defensive. Preserves $4.5M P50 rather than adding.
+
+**Predicted metric movement (G14):**
+- Metric: `sms_credit_purchases` (weekly)
+- Baseline: 645 (week 4/19)
+- Delta: **>900/wk within 4 weeks of intervention, OR flat-to-down**
+- Window: 28 days
+- Graded against: `queries/36-sms-metrics.sql`
+
+**R&A role:** build a one-off diagnostic dashboard for Connor's team. 3-day effort.
+
+**Recommended next step:** Connor Callahan + Ashish Prakash own diagnostic; Deepak sponsors R&A's dashboard support. Due **2026-05-12**.
+
+---
+
+## PART 3 — ESCALATE tier (SLT decisions required)
+
+### Recommendation #8 — 🚨 **Stand up MM Account/Billing structural workstream** [ESCALATE]
+
+**Partner:** Plans/PLC EM + SLT.
+
+**Mechanism:** FY26 Priority 1 for MM Subscription/Community. **0 structural launches in 9 months** while Klaviyo + HubSpot have parity. Closing this gap converts MM customers who would otherwise churn to competitors at the $5M-$10M revenue ceiling.
+
+**Business case:** P50 $4.0M × probability 0.4 = $1.6M expected; long horizon (12-18 months).
+
+**R&A downstream:** enables Rec #9 (MM multi-entity reporting) — compound value.
+
+**Capacity ask:** HC + eng headcount at Plans/PLC; **escalation to Deepak's SLT for strategic capacity reallocation.**
+
+**Predicted metric movement (G14):**
+- Metric: `is_high_value=TRUE` Premium-tier weekly bookings (MM proxy)
+- Baseline: ~59/week (week 4/19)
+- Delta: +20% to +35% within 12 months of infra landing
+- Window: 365 days
+
+**What would change my mind:** Win/loss interviews (gap) show MM customers churn for reasons OTHER than billing infra.
+
+**Recommended next step:** 2-week discovery budget (≤30 customer-conversations) BEFORE committing structural eng. Owner: Jacquelyn Horgan + UXR partnership.
+
+---
+
+### Recommendation #9 — 🚨 **Gainsight / CSM integration for Churn-Prediction Agent (B)** [ESCALATE]
+
+**Partner:** Customer Success leadership.
+
+**Mechanism:** Rec #2 (Churn-Prediction Agent) has 2x leverage multiplier *if* CSMs can surface/act on predictions in their Gainsight workflow. Currently coverage gap (Tier 1.2 per `canon/coverage-gaps.md`).
+
+**Business case:** Moves Rec #2 from P50 $5.5M to P50 $11M (the P90 case becomes realistic). Net uplift: $5.5M expected value IF integration lands.
+
+**R&A role:** provides the insights; CS leadership must commit workflow integration.
+
+**Recommended next step:** Deepak escalates to CS leadership (name in `canon/org-glossary.md` — to confirm); request joint scoping for H2 FY26.
 
 ---
 
 ## Predictions written to predictions-ledger.jsonl
 
-```json
-{"run_ts":"2026-04-28T21:00:00Z","run_yyyy_ww":"2026-W17","recommendation_id":"2026-W17-rec-1","title":"Personalization/CDP compound","predicted_metric":"email_creates","predicted_baseline":1635591,"predicted_delta":"+3% to +5% on email_creates per active C1","predicted_window_days":56,"predicted_due_at":"2026-06-23T21:00:00Z","graded_against":"31-email-creates","subagent_attribution":"mc-recommendation-ranker","actual_delta":null,"graded_at":null,"hit":null}
-{"run_ts":"2026-04-28T21:00:00Z","run_yyyy_ww":"2026-W17","recommendation_id":"2026-W17-rec-2","title":"MM Account/Billing structural","predicted_metric":"is_high_value bookings (Premium tier proxy)","predicted_baseline":59,"predicted_delta":"+20% to +35% on Premium-tier weekly bookings","predicted_window_days":365,"predicted_due_at":"2027-04-28T21:00:00Z","graded_against":"14-bookings-by-tier","subagent_attribution":"mc-recommendation-ranker","actual_delta":null,"graded_at":null,"hit":null}
-{"run_ts":"2026-04-28T21:00:00Z","run_yyyy_ww":"2026-W17","recommendation_id":"2026-W17-rec-3","title":"SMS credit-purchases decline diagnostic","predicted_metric":"sms_credit_purchases","predicted_baseline":645,"predicted_delta":"return to >900/week within 4 weeks of intervention; or flat-to-down if no intervention","predicted_window_days":28,"predicted_due_at":"2026-05-26T21:00:00Z","graded_against":"36-sms-metrics","subagent_attribution":"mc-recommendation-ranker","actual_delta":null,"graded_at":null,"hit":null}
-```
+The following predictions are being appended (see `predictions-ledger.jsonl`). All recommendations with measurable outcome predictions are tracked.
 
-## Findings ledger row written
+| rec_id | tier | title | metric | delta | window_days | due |
+|---|---|---|---|---|---|---|
+| 2026-W17-own-1 | OWN | Analytics Agent V2 scale-up | email_creates/active-C1 | +3% to +6% | 180 | 2026-10-26 |
+| 2026-W17-own-2 | OWN | Churn-Prediction Agent | active_churn_mrr | -5% to -10% | 365 | 2027-04-29 |
+| 2026-W17-own-3 | OWN | AP reporting accelerator | exp-to-readout time | <14 days | 42 | 2026-06-10 |
+| 2026-W17-own-4 | OWN | Ecomm reporting | ECU 6mo churn rate | -1.5 to -3pt | 365 | 2027-04-29 |
+| 2026-W17-own-5 | OWN | Top-3 VOC fixes | R&A VOC volume (HVC) | -30% | 120 | 2026-08-27 |
+| 2026-W17-inf-6 | INFLUENCE | Personalization compound (prior) | email_creates | +3% to +5% | 56 | 2026-06-24 |
+| 2026-W17-inf-7 | INFLUENCE | SMS diagnostic | sms_credit_purchases | >900/wk or flat | 28 | 2026-05-27 |
+| 2026-W17-esc-8 | ESCALATE | MM Account/Billing structural | Premium-tier bookings | +20% to +35% | 365 | 2027-04-29 |
+
+## Findings ledger row
 
 ```json
-{"ts":"2026-04-28T21:00:00Z","source":"mc-recommendation-ranker","claim":"Top 3 recs (with G14 predictions): 1) Personalization/CDP compound (predicted +3-5% email_creates by 2026-06-23); 2) MM Account/Billing structural (escalation flag - HC/capacity decision); 3) SMS credit-purchases decline diagnostic (2-wk POL).","confidence":"medium","citations":["analyses/2026-W17/07-recommendations.md","predictions-ledger.jsonl"]}
+{"ts":"2026-04-29T21:00:00Z","source":"mc-recommendation-ranker","claim":"2026-W17 v2 with ownership tiering: 5 OWN recs (P50 $8.4M = 17% of $50M), 2 INFLUENCE (P50 $9.4M), 2 ESCALATE (P50 $4.4M). Headline OWN: (1) Analytics Agent V2 scale, (2) Churn-Prediction Agent, (3) AP reporting accelerator. Stack ~44% of $50M.","confidence":"medium","citations":["analyses/2026-W17/07-recommendations.md","analyses/2026-W17/09-ra-ai-opportunities.md","predictions-ledger.jsonl"]}
 ```

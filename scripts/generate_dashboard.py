@@ -87,9 +87,13 @@ def load_brief(week_dir: Path) -> str:
 
 
 def load_analyses(week_dir: Path) -> list[tuple[str, str, str]]:
-    """Return list of (slug, title, html_content)."""
+    """Return list of (slug, title, html_content).
+    Glob catches 01-99 numbered analysis files; the executive brief (00-*) is rendered separately.
+    """
     out = []
-    for p in sorted(week_dir.glob("0[1-8]-*.md")):
+    for p in sorted(week_dir.glob("[0-9][1-9]-*.md")):
+        if p.stem.startswith("00-"):
+            continue
         text = p.read_text()
         # Title from first # heading or filename
         m = re.search(r"^# (.+)$", text, re.MULTILINE)

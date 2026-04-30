@@ -42,9 +42,13 @@ Follow this exact sequence:
               -> Task: mc-cohort-churn-diagnostician
               -> Task: mc-gtm-lever-analyst
               -> Task: mc-competitive-intel-analyst
+[Step 3.5] R&A + AI Agent ownership-lens (sequential, after diagnostics)
+              -> Task: mc-ra-ai-opportunity-analyst  (writes 09-ra-ai-opportunities.md)
+              NOTE: this is Deepak's OWN-tier lens. MUST run before Step 4
+                    so the recommendation ranker can lead with OWN recs.
 [Step 4]  Synthesis (sequential)
               -> Task: mc-growth-tree-50m
-              -> Task: mc-recommendation-ranker
+              -> Task: mc-recommendation-ranker  (partitions OWN / INFLUENCE / ESCALATE)
 [Step 5]  QC (adversarial dual-analysis)
               -> Task: mc-self-eval-rubric
               -> Task: mc-adversarial-reviewer (pre-mortem)
@@ -146,30 +150,49 @@ Every subagent task prompt must include:
 
 Path: `analyses/<YYYY-WW>/00-executive-brief.md`
 
-Use Pyramid Principle (Barbara Minto):
+Use Pyramid Principle (Barbara Minto). **Brief must lead with Deepak's OWN-tier recommendations**, then INFLUENCE, then ESCALATE.
 
 ```markdown
 # Executive Brief — <YYYY-WW>
 
 ## SCQA
-- **Situation**: <where we are on the $50M trajectory, 2 sentences>
+- **Situation**: <where we are on the $50M trajectory, 2 sentences, with explicit OWN-tier share>
 - **Complication**: <what's not on track, 1-2 sentences>
-- **Question**: <the one strategic question this brief answers>
-- **Answer**: <the headline recommendation in 1 sentence>
+- **Question**: What should Deepak commission THIS week (OWN tier) to maximize R&A's share of $50M, and what partner bets (INFLUENCE) need co-sponsorship?
+- **Answer**: <headline OWN-tier recommendation in 1 sentence>
 
-## Top 3 recommendations (ranked)
+## Deepak's OWN-tier share of $50M
 
-### #1 — <title>
+- Total realistic OWN-tier P50: $<X>M (<Y>% of $50M)
+- Largest OWN opportunity: <name> ($<Z>M P50)
+- Biggest INFLUENCE dependency: <partner team>
+- Open ESCALATE asks: <count>
+
+## Part 1 — Top 3 OWN-tier recommendations (Deepak commissions)
+
+### #1 — <title> [OWN]
 - **Mechanism (named)**: <what causes the predicted impact>
+- **Business case**: realistic P50 $<X>M / P90 $<Y>M; probability <Z>; time to impact <N> months
 - **Pillars**: P<x>=High (<reason>), P<y>=Med (<reason>), ...
 - **ICP**: <which ICPs benefit>
-- **Predicted metric movement**: <metric> by <delta> within <N> days  ← G14
+- **Partner dependencies**: <list>
+- **Capacity ask**: <HC / $ / reprioritization>
+- **Predicted metric movement (G14)**: <metric> by <delta> within <N> days
 - **Confidence**: High / Medium / Low (with named uncertainty source)
 - **What would change my mind**: <falsifying evidence>
 - **Pre-mortem**: 3 reasons this fails: 1... 2... 3...
 
-### #2 — <...>
-### #3 — <...>
+### #2 — <title> [OWN]
+### #3 — <title> [OWN]
+
+## Part 2 — Top 2 INFLUENCE-tier recommendations (Deepak co-sponsors)
+
+### #4 — <title> [INFLUENCE, partner: <team>]
+### #5 — <title> [INFLUENCE, partner: <team>]
+
+## Part 3 — ESCALATE (SLT decisions required)
+
+### #6 — <title> **ESCALATE**
 
 ## Prior-week prediction hit rate
 - Open predictions graded this run: N

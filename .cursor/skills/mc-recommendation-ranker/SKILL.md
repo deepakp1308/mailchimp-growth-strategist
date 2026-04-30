@@ -11,12 +11,33 @@ This is the most important subagent. Inherits the strict calibration rules from 
 
 ## Inputs
 
+- `analyses/<YYYY-WW>/09-ra-ai-opportunities.md` — **OWN-tier candidates (R&A + Analytics AI Agent surface)** — these are the first-priority recommendations
 - `analyses/<YYYY-WW>/06-growth-tree.md` (top 5 levers + candidate new levers)
 - `analyses/<YYYY-WW>/01-05-*.md` (all diagnostic findings)
 - `canon/fy26-strategy.md` (strategy fit)
 - `canon/icp-canon.md` (ICP fit)
+- `canon/ra-ai-surface.md` — **OWN / INFLUENCE / ESCALATE tiering rubric**
 - `predictions-ledger.jsonl` (your prior predictions — what's worked/failed)
 - `findings-ledger.jsonl` (cross-week patterns)
+
+## Ownership tiering (NEW — applied FIRST, before gates)
+
+Every recommendation must be classified into one tier per `canon/ra-ai-surface.md`:
+
+| Tier | Definition | Brief prominence |
+|---|---|---|
+| **OWN** | R&A + Analytics AI surface. Deepak directly commissions. | **Lead the executive brief. Top 3 OWN recs always shown first.** |
+| **INFLUENCE** | Adjacent (Audience/CDP, Email, SMS, Plans, OBX) where R&A is consumer or reporting layer. Deepak PM-partners. | Second section — "Partner bets where Deepak influences." |
+| **ESCALATE** | Out-of-scope (Plans/PLC structural, QBO/Omni, HC). SLT call. | Third section with explicit **ESCALATE** flag. |
+
+**Partition the recommendation portfolio into these 3 tiers. Each tier gets independently ranked and presented in that order.**
+
+For every recommendation, also tag:
+- `tier`: one of OWN / INFLUENCE / ESCALATE
+- `deepak_ownership`: full / co-owned / none
+- `partner_dependencies`: list of teams/PMs Deepak must coordinate with
+
+**OWN tier recommendations MUST carry sizing (realistic $ delta P50 + P90, probability, time-to-impact)** — these are the ones Deepak will actually champion, so the business case needs to be defensible.
 
 ## Process — 5-gate framework
 
@@ -140,14 +161,17 @@ If you cannot make a falsifiable prediction → recommendation gets **POL/Probe*
 
 ## Steps
 
-1. Read all inputs.
-2. Generate ~7-10 candidate recommendations (from Growth Tree top levers + candidate new levers + diagnostic findings).
-3. Run gates + pillars on each.
-4. Sort by score (heuristic: # H pillars × strategy fit × inverse-time-to-impact).
-5. Take **top 3** for the executive brief; include a longer list as "considered but not in top 3" for transparency.
-6. For each top-3, write a falsifiable prediction.
-7. Append predictions to `predictions-ledger.jsonl`.
-8. Write the full output to `analyses/<YYYY-WW>/07-recommendations.md`.
+1. Read all inputs — **CRITICAL: read `09-ra-ai-opportunities.md` first** so OWN-tier candidates seed your portfolio.
+2. Generate candidate recommendations:
+   - **OWN tier**: all OWN opportunities from 09-ra-ai-opportunities.md (typically 5-8)
+   - **INFLUENCE tier**: from Growth Tree + diagnostics where R&A is consumer or reporting layer (typically 3-5)
+   - **ESCALATE tier**: structural/strategic asks needing SLT (typically 1-3)
+3. Run gates + pillars on each, within its tier.
+4. Sort within each tier by score.
+5. **Take top 3 OWN, top 2 INFLUENCE, top 1-2 ESCALATE** for the executive brief.
+6. For EVERY rec (including INFLUENCE and ESCALATE where the metric is measurable), write a falsifiable prediction.
+7. Append predictions to `predictions-ledger.jsonl` (include `tier` field).
+8. Write the full output to `analyses/<YYYY-WW>/07-recommendations.md` **with sections structured as OWN → INFLUENCE → ESCALATE.**
 
 ## Append to predictions-ledger.jsonl
 
